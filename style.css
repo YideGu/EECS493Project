@@ -4,9 +4,10 @@
     top:0;
     background: #2C4762;
     color: #DAF1FC;
-    height: 200px;
+    height: 120px;
     border-bottom: 3px solid  #BBBBBB;
     border-top: 3px solid  #BBBBBB;
+    background-color: #0D3255;
 }
 
 .header img{
