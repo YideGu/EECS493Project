@@ -1,85 +1,67 @@
 <!DOCTYPE html>
 <html>
-    <title> guyide </title>
+    <title> Easy Transaction </title>
     <head>
         <meta charset="utf-8">
         <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     </head>
     <body>
         <div class="header" id="myHeader">
-            <img src = "images/m-logo.svg" alt = "logo">
+            <img src = "images/m-logo.svg" alt = "logo" height="100px">
         </div>
-        <div class = "eventInformation">
-            <b> <p>Tony Awards 2016</p></b> 
-            <p id = "Airing"><b>Airing</b> June 12, 8ET on CBS</p>
+        
+        <div id="app">
+            {{ message }}
+        </div>
+        <div id="components-demo">
+            <button-counter></button-counter>
         </div>
         <!-- <div class = "seperationLine"></div> -->
         <div class = "actress">
-            <p> <b>Actress (Leading Role - Musical) Nominees </b></p>
+            <p> <b>On sale items </b></p>
             <div class = "imgContainer" id = "Winner">
                 <img src="images\00Z0Z_8hggfGA06si_0CI0t2_600x450.jpg" alt = "CarmenCusack">
-                <p>Cynthia Erivo,  <i> The Color Purple </i></p>
-                <p> Winner</p>
+                <p> Wooden table with four chairs</p>
+                <p> Price: $150</p>
+                <p> Description: Brand new round wooden table with corresponding chair.</p>
+                <p> Deliver option: pick up only. </p>
             </div>
             <div class = "imgContainer">
-                <img src="images/2016/actress/LauraBenanti.jpg" alt = "CynthiaErivo">
-                <p>Laura Benanti, <i> She Loves Me </i></p>
+                <img src="images\00i0i_hKD0SWvt1zv_0hq0oT_600x450.jpg" alt = "CynthiaErivo">
+                <p> Vanity</p>
+                <p> Price: $150</p>
+                <p> Description: Brand new round wooden table with corresponding chair.</p>
+                <p> Deliver option: pick up only. </p>
             </div>
             <div class = "imgContainer">
-                <img src="images/2016/actress/CarmenCusack.png" alt = "CynthiaErivo">
-                <p>Carmen Cusack, <i> Bright Star </i></p>
+                <img src="images\00x0x_ca27E3fqEp4_09G06s_600x450.jpg" alt = "CynthiaErivo">
+                <p> Wooden table with four chairs</p>
+                <p> Price: $150</p>
+                <p> Description: Brand new round wooden table with corresponding chair.</p>
+                <p> Deliver option: pick up only. </p>
             </div>
             <div class = "imgContainer">
-                <img src="images/2016/actress/JessieMueller.jpg" alt = "CynthiaErivo">
-                <p>Jessie Mueller, <i> Waitress </i></p>
+                <img src="images\00o0o_cFieU7ZLchn_0BC0t2_600x450.jpg" alt = "CynthiaErivo">
+                <p> Wooden table with four chairs</p>
+                <p> Price: $150</p>
+                <p> Description: Brand new round wooden table with corresponding chair.</p>
+                <p> Deliver option: pick up only. </p>
             </div>
             <div class = "imgContainer">
-                <img src="images/2016/actress/PhillipaSoo.jpg" alt = "CynthiaErivo">
-                <p>Phillipa Soo, <i> Hamilton </i></p>
+                <img src="images\00A0A_ac81hm0nSDP_0pO0jm_600x450.jpg" alt = "CynthiaErivo">
+                <p> Wooden table with four chairs</p>
+                <p> Price: $150</p>
+                <p> Description: Brand new round wooden table with corresponding chair.</p>
+                <p> Deliver option: pick up only. </p>
             </div>
         </div>
-        <div class = "seperationLine"></div>
-        <div class = "actor">
-            <p> <b>Actor (Leading Role - Musical) Nominees </b></p>
-            <div class = "imgContainer" id = "Winner">
-                <img src="images/2016/actor/LeslieOdomJr.jpg" alt = "CarmenCusack">
-                <p>Leslie Odom, Jr., <i> Hamilton </i></p>
-                <p>Winner</p>
-            </div>
-            <div class = "imgContainer">
-                <img src="images/2016/actor/AlexBrightman.jpg" alt = "CynthiaErivo">
-                <p>Alex Brightman, <i> School of Rock - The Musical </i></p>
-            </div>
-            <div class = "imgContainer">
-                <img src="images/2016/actor/DannyBurstein.jpg" alt = "CynthiaErivo">
-                <p>Danny Burstein, <i> Fiddler on the Roof </i></p>
-            </div>
-            <div class = "imgContainer">
-                <img src="images/2016/actor/ZacharyLevi.jpg" alt = "CynthiaErivo">
-                <p>Zachary Levi, <i> She Loves Me </i></p>
-            </div>
-            <div class = "imgContainer">
-                <img src="images/2016/actor/Lin-ManuelMiranda.jpg" alt = "CynthiaErivo">
-                <p>Lin-Manuel Miranda,  <i> Hamilton</i></p>
-            </div>
-        </div>
-        <div class = "seperationLine"></div>
-        <div class = "other">
-            <p> <b> Other categories</b></p>
-            <ul>
-                <li>Book of a Musical</li>
-                <li>Choreography</li>
-                    <li>Design - Musical</li> 
-                    <li>Direction - Musical</li>
-                    <li>Lighting Design - Musical</li>
-                    <li>Musical</li>
-                    <li>Orchestrations</li>
-                    <li>Scenic Design - Musical</li>
-                    <li>Score</li>
-                    <li>...</li>
-            </ul>
-            <a href="https://www.tonyawards.com/nominees/">See the complete list</a>
-        </div>
+        
+        
+        <script src='scripts/vue.js'></script>
     </body>
 </html>
+

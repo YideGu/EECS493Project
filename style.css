@@ -20,19 +20,24 @@
 }
 
 .imgContainer{
-    height: 390px;
-    width: 400px;
+    height: 330px;
+    width: 700px;
     margin-bottom: 5px;
+    /* margin-right: 10px; */
     display: inline-block;
-    text-align: center;
+    /* text-align: center; */
     border: 3px solid transparent;
     vertical-align: middle;
+    border: 3px solid;
+    border-color: #2C4762;
 }
 
 .imgContainer img{
+    float: left;
     object-fit: cover;
     width: 400px;
     height: 320px;
+    margin-right: 20px;
 }
 
 .imgContainer p{
