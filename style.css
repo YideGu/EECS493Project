@@ -72,12 +72,14 @@ html {
     margin-top: 0px;
 }
 
+.event{
+	position:relative;
+	top: 120px;
+}
+
 .actress{
     margin-left: 20px;
     margin-right: 20px;
-}
-
-.actress p{
     font-size: 24px;
 }
 
