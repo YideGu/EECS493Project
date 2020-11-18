@@ -1,3 +1,5 @@
+var audio2 = new Audio('audio/go-ahead.mp3');
+
 var app = new Vue({
     el: '#app',
     data: {
@@ -20,5 +22,10 @@ Vue.component('button-counter', {
   `
 })
 
+$(document).ready(function(){
+  $("#CarmenCusack").mouseenter(function(){
+	  audio2.play()
+  });
+});
 
 new Vue({ el: '#components-demo' })
