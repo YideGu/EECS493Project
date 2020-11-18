@@ -2,6 +2,7 @@
     position: fixed;
     width:100%;
     top:0;
+	z-index:999;
     background: #2C4762;
     color: #DAF1FC;
     height: 120px;
@@ -13,6 +14,11 @@
 .header img{
       margin-top: 10px;
       vertical-align: middle;
+}
+
+#headerPic {
+	position: fixed;
+	left:20px;
 }
 
 .content{
