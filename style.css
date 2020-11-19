@@ -21,6 +21,26 @@
 	left:20px;
 }
 
+#flexbox{
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+#flexbox > div{
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+.game-window {
+  height: 100%;
+  width: 500px;
+  background: white;
+  border-right: 3px solid #53f;
+  float: left;
+  position: relative;
+}
+
 .content{
     margin-left: 40px;
 }
@@ -150,4 +170,11 @@ html {
 .Description{
     overflow: hidden;
     text-overflow: ellipsis;
+}
+
+#addWindow {
+	position:fixed;
+	right:0%;
+	top: 120px;
+	padding:10px;
 }

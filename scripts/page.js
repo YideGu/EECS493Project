@@ -45,3 +45,19 @@ function truncateText(item, maxLength) {
 }
 //You can then call the function with something like what i have below.
 // document.querySelector('p').innerText = truncateText('p', 107);
+
+$(document).ready( function() {
+    console.log("Ready!");
+    $('#addButton').click(()=> {
+        console.log("add start!")
+        add();
+    });
+});
+
+function add() {
+    var title = $("#title");
+    var price = $("#price");
+    var description = $("#description");
+    var delivery = $("#delivery");
+
+}
