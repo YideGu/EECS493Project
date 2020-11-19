@@ -12,6 +12,11 @@ $(document).ready( function() {
         // console("runned");
         this.innerText = truncateText(this, maximumDescriptionLength);
     })  
+
+
+    $('#Search').keydown(function(event){
+          if(event.which == 13) myFunction();
+    })
 });
 
 
