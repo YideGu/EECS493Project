@@ -16,9 +16,21 @@
       vertical-align: middle;
 }
 
+#inputWindow{
+	position: fixed;
+	display: flex;
+	flex-direction: column;
+}
+
 #headerPic {
 	position: fixed;
 	left:20px;
+}
+
+#addFormat{
+	display: flex;
+	align-items: flex-end;
+	
 }
 
 #flexbox{
@@ -173,6 +185,7 @@ html {
 }
 
 #addWindow {
+	z-index:999;
 	position:fixed;
 	right:0%;
 	top: 120px;

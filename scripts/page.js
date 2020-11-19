@@ -2,6 +2,54 @@ const maximumDescriptionLength = 180;
 
 
 $(document).ready( function() {
+    var title = $("#title");
+    var price = $("#price");
+    var description = $("#description");
+    var delivery = $("#delivery");
+    var addButton = $("#addButton");
+    var PublishButton = $("#PublishButton");
+    var CancelButton = $("#CancelButton");
+	
+	title.hide();
+	price.hide();
+	description.hide();
+	delivery.hide();
+	PublishButton.hide();
+	CancelButton.hide();
+	
+	addButton.click(function(){
+		PublishButton.show();
+		CancelButton.show();
+		addButton.hide();
+		
+		title.show();
+		price.show();
+		description.show();
+		delivery.show();
+	});
+	
+	CancelButton.click(function(){
+		PublishButton.hide();
+		CancelButton.hide();
+		addButton.show();
+		
+		title.hide();
+		price.hide();
+		description.hide();
+		delivery.hide();
+	});
+	
+	PublishButton.click(function(){
+		PublishButton.hide();
+		CancelButton.hide();
+		addButton.show();
+		
+		title.hide();
+		price.hide();
+		description.hide();
+		delivery.hide();
+	});
+	
     console.log("Ready!");
     $('#SearchButton').click(()=> {
         console.log("clicked!")
@@ -46,18 +94,3 @@ function truncateText(item, maxLength) {
 //You can then call the function with something like what i have below.
 // document.querySelector('p').innerText = truncateText('p', 107);
 
-$(document).ready( function() {
-    console.log("Ready!");
-    $('#addButton').click(()=> {
-        console.log("add start!")
-        add();
-    });
-});
-
-function add() {
-    var title = $("#title");
-    var price = $("#price");
-    var description = $("#description");
-    var delivery = $("#delivery");
-
-}
