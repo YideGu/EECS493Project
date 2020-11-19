@@ -9,23 +9,31 @@ $(document).ready( function() {
     var addButton = $("#addButton");
     var PublishButton = $("#PublishButton");
     var CancelButton = $("#CancelButton");
+    var DeleteButton = $("#DeleteButton");
+    var removeButton = $("#removeButton");
 	var operationZone = $("#flexbox");
+	var removeNumber = $("#removeNumber");
 	var imagestring = $("#image");
 	var itemIndex = 6;
+	var itemButton;
 	
 	title.hide();
 	price.hide();
 	description.hide();
+	DeleteButton.hide();
 	delivery.hide();
 	imagestring.hide();
+	removeNumber.hide();
 	PublishButton.hide();
 	CancelButton.hide();
 	
 	addButton.click(function(){
 		PublishButton.show();
 		CancelButton.show();
+		DeleteButton.hide();
 		imagestring.show();
 		addButton.hide();
+		removeButton.hide();
 		
 		title.show();
 		price.show();
@@ -33,23 +41,58 @@ $(document).ready( function() {
 		delivery.show();
 	});
 	
+	removeButton.click(function(){
+		PublishButton.hide();
+		CancelButton.show();
+		DeleteButton.show();
+		addButton.hide();
+		removeButton.hide();
+		
+		removeNumber.show();
+	});
+	
 	CancelButton.click(function(){
 		PublishButton.hide();
 		CancelButton.hide();
+		DeleteButton.hide();
 		imagestring.hide();
 		addButton.show();
+		removeButton.show();
+		
 		
 		title.hide();
 		price.hide();
 		description.hide();
 		delivery.hide();
+		removeNumber.hide();
+	});
+	
+	DeleteButton.click(function(){
+		PublishButton.hide();
+		CancelButton.hide();
+		DeleteButton.hide();
+		imagestring.hide();
+		addButton.show();
+		removeButton.show();
+		
+		temp= "#item-" + removeNumber.val();
+		temp = $("#item-" + removeNumber.val());
+		temp.remove();
+		
+		title.hide();
+		price.hide();
+		description.hide();
+		delivery.hide();
+		removeNumber.hide();
 	});
 	
 	PublishButton.click(function(){
 		PublishButton.hide();
 		CancelButton.hide();
+		DeleteButton.hide();
 		imagestring.hide();
 		addButton.show();
+		removeButton.show()
 		
 		title.hide();
 		price.hide();
@@ -77,7 +120,7 @@ $(document).ready( function() {
 });
 
 function createItemDivString(itemIndex, imageString, header, p1, p2, p3){
-  return "<div id='i-" + itemIndex + "' class='imgContainer'><img src='img/" + imageString + "'/><h1>" 
+  return "<div id='item-" + itemIndex + "' class='imgContainer'><img src='img/" + imageString + "'/><h1>" + itemIndex + ". "
 			+ header + "</h1><p> Price:" + p1 + "</p><p class = 'Description'> Description:" + p2 + "</p><p> Deliver option:" + p3 + "</p></div>";
 }
 
