@@ -1,9 +1,17 @@
+const maximumDescriptionLength = 200;
+
+
 $(document).ready( function() {
     console.log("Ready!");
     $('#SearchButton').click(()=> {
         console.log("clicked!")
         myFunction();
     });
+
+    $('.Description').each(function(){
+        // console("runned");
+        this.innerText = truncateText(this, maximumDescriptionLength);
+    })  
 });
 
 
@@ -21,4 +29,14 @@ function myFunction() {
         nodes[i].style.display = "none";
       }
     }
-  }
+}
+
+function truncateText(item, maxLength) {
+    var truncated = item.innerText;
+    if (truncated.length > maxLength) {
+        truncated = truncated.substr(0,maxLength) + '...';
+    }
+    return truncated;
+}
+//You can then call the function with something like what i have below.
+// document.querySelector('p').innerText = truncateText('p', 107);

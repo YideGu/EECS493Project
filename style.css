@@ -102,6 +102,10 @@ html {
     font-size: 18px;
 }
 
+.imgContainer h1{
+    font-size: 20px;
+}
+
 .other{
     margin-left: 20px;
     margin-right: 20px;
@@ -141,4 +145,9 @@ html {
     margin: 0;
     font-size: 40px;
     font-weight: bold;
+}
+
+.Description{
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
