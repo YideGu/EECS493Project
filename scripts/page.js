@@ -9,17 +9,22 @@ $(document).ready( function() {
     var addButton = $("#addButton");
     var PublishButton = $("#PublishButton");
     var CancelButton = $("#CancelButton");
+	var operationZone = $("#flexbox");
+	var imagestring = $("#image");
+	var itemIndex = 6;
 	
 	title.hide();
 	price.hide();
 	description.hide();
 	delivery.hide();
+	imagestring.hide();
 	PublishButton.hide();
 	CancelButton.hide();
 	
 	addButton.click(function(){
 		PublishButton.show();
 		CancelButton.show();
+		imagestring.show();
 		addButton.hide();
 		
 		title.show();
@@ -31,6 +36,7 @@ $(document).ready( function() {
 	CancelButton.click(function(){
 		PublishButton.hide();
 		CancelButton.hide();
+		imagestring.hide();
 		addButton.show();
 		
 		title.hide();
@@ -42,12 +48,15 @@ $(document).ready( function() {
 	PublishButton.click(function(){
 		PublishButton.hide();
 		CancelButton.hide();
+		imagestring.hide();
 		addButton.show();
 		
 		title.hide();
 		price.hide();
 		description.hide();
 		delivery.hide();
+		var result = createItemDivString(itemIndex++, imagestring.val(),title.val(),price.val(),description.val(),delivery.val());
+		operationZone.append(result);
 	});
 	
     console.log("Ready!");
@@ -67,7 +76,10 @@ $(document).ready( function() {
     })
 });
 
-
+function createItemDivString(itemIndex, imageString, header, p1, p2, p3){
+  return "<div id='i-" + itemIndex + "' class='imgContainer'><img src='img/" + imageString + "'/><h1>" 
+			+ header + "</h1><p> Price:" + p1 + "</p><p class = 'Description'> Description:" + p2 + "</p><p> Deliver option:" + p3 + "</p></div>";
+}
 
 
 function myFunction() {
