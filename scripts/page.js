@@ -105,7 +105,7 @@ $(document).ready( function() {
     console.log("Ready!");
     $('#SearchButton').click(()=> {
         console.log("clicked!")
-        myFunction();
+        filterItems();
     });
 
     $('.Description').each(function(){
@@ -115,7 +115,7 @@ $(document).ready( function() {
 
 
     $('#Search').keydown(function(event){
-          if(event.which == 13) myFunction();
+          if(event.which == 13) filterItems();
     })
 });
 
@@ -126,7 +126,7 @@ function createItemDivString(itemIndex, imageString, header, p1, p2, p3){
 }
 
 
-function myFunction() {
+function filterItems() {
     var input = document.getElementById("Search");
     var filter = input.value.toLowerCase();
     var nodes = document.getElementsByClassName('imgContainer');
