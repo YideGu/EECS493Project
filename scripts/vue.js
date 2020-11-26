@@ -24,7 +24,7 @@ Vue.component('button-counter', {
 
 $(document).ready(function(){
   $("#CarmenCusack").mouseenter(function(){
-	  audio2.play()
+	  // audio2.play()
   });
 });
 

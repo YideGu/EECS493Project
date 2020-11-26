@@ -97,7 +97,7 @@ $(document).ready( function() {
 		title.hide();
 		price.hide();
 		description.hide();
-		delivery.hide();
+    delivery.hide();
 		var result = createItemDivString(itemIndex++, imagestring.val(),title.val(),price.val(),description.val(),delivery.val());
 		operationZone.append(result);
 	});
@@ -105,7 +105,7 @@ $(document).ready( function() {
     console.log("Ready!");
     $('#SearchButton').click(()=> {
         console.log("clicked!")
-        myFunction();
+        filterItems();
     });
 
     $('.Description').each(function(){
@@ -115,17 +115,18 @@ $(document).ready( function() {
 
 
     $('#Search').keydown(function(event){
-          if(event.which == 13) myFunction();
+          if(event.which == 13) filterItems();
     })
 });
 
 function createItemDivString(itemIndex, imageString, header, p1, p2, p3){
-  return "<div id='item-" + itemIndex + "' class='imgContainer'><img src='img/" + imageString + "'/><h1>" + itemIndex + ". "
+  imageString = imageString.split("\\").pop();
+  return "<div id='item-" + itemIndex + "' class='imgContainer'><img src='images/" + imageString + "'/><h1>" + itemIndex + ". "
 			+ header + "</h1><p> Price:" + p1 + "</p><p class = 'Description'> Description:" + p2 + "</p><p> Deliver option:" + p3 + "</p></div>";
 }
 
 
-function myFunction() {
+function filterItems() {
     var input = document.getElementById("Search");
     var filter = input.value.toLowerCase();
     var nodes = document.getElementsByClassName('imgContainer');
