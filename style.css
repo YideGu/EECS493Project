@@ -17,7 +17,7 @@
 }
 
 #inputWindow{
-	position: fixed;
+	/* position: fixed; */
 	display: flex;
 	flex-direction: column;
 }
@@ -113,7 +113,7 @@ html {
 
 .event{
 	position:relative;
-	top: 170px;
+	/* top: 170px; */
 }
 
 .actress{
@@ -187,8 +187,8 @@ html {
 
 #addWindow {
 	z-index:999;
-	position:fixed;
+	/* position:fixed; */
 	right:0%;
-	top: 120px;
+	/* top: 120px; */
 	padding:10px;
 }
