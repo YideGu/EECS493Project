@@ -30,7 +30,7 @@
 #addFormat{
 	display: flex;
 	align-items: flex-end;
-	
+
 }
 
 #flexbox{
@@ -204,3 +204,23 @@ html {
     display: flex;
     justify-content: center;
   }
+
+.event {
+  display: none;
+}
+
+#addWindow{
+  display: none;
+}
+
+.searchBox{
+  display: none;
+}
+
+.btn-danger{
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  z-index: 5;
+  visibility: hidden;
+}
