@@ -154,9 +154,9 @@ function filterItems() {
   
     for (i = 0; i < nodes.length; i++) {
       if (nodes[i].innerText.toLowerCase().includes(filter)) {
-        nodes[i].style.display = "inline-block";
+        nodes[i].parentElement.style.display = "inline-block";
       } else {
-        nodes[i].style.display = "none";
+        nodes[i].parentElement.style.display = "none";
       }
     }
 }

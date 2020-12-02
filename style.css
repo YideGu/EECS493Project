@@ -82,6 +82,7 @@
 .imgContainer p{
     vertical-align: middle;
     margin: 0;
+    cursor: pointer;
 }
 
 html {
@@ -198,3 +199,8 @@ html {
 	/* top: 120px; */
 	padding:10px;
 }
+
+.searchBox {
+    display: flex;
+    justify-content: center;
+  }
