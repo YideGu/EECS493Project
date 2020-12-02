@@ -172,6 +172,12 @@ html {
     float : right;
 }
 
+.close{}
+
+.top{
+	z-index: 999;
+}
+
 .header h1{
     text-align: center;
     line-height: 200px;

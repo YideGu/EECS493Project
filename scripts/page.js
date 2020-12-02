@@ -14,8 +14,10 @@ $(document).ready( function() {
 	var operationZone = $("#flexbox");
 	var removeNumber = $("#removeNumber");
 	var imagestring = $("#image");
-	var itemIndex = 6;
+	var toggle = $("#toggle");
+	var itemIndex = 9;
 	var itemButton;
+
 	
 	title.hide();
 	price.hide();
@@ -26,6 +28,7 @@ $(document).ready( function() {
 	removeNumber.hide();
 	PublishButton.hide();
 	CancelButton.hide();
+	
 	
 	addButton.click(function(){
 		PublishButton.show();
@@ -97,10 +100,15 @@ $(document).ready( function() {
 		title.hide();
 		price.hide();
 		description.hide();
-    delivery.hide();
-		var result = createItemDivString(itemIndex++, imagestring.val(),title.val(),price.val(),description.val(),delivery.val());
+		delivery.hide();
+		var result = createItemDivString(itemIndex, imagestring.val(),title.val(),price.val(),description.val(),delivery.val());
 		operationZone.append(result);
+		$("#item-"+itemIndex).append(createItemDivString1(itemIndex++, imagestring.val(),title.val(),price.val(),description.val(),delivery.val()));
 	});
+	
+	$('#rm').click(function(){
+		$(this).parent().remove();
+	})
 	
     console.log("Ready!");
     $('#SearchButton').click(()=> {
@@ -119,12 +127,25 @@ $(document).ready( function() {
     })
 });
 
+  setInterval( function() {
+	  
+	$('.close').click(function(){
+    $(this).parent().remove();
+})
+  }, 50);
+
 function createItemDivString(itemIndex, imageString, header, p1, p2, p3){
   imageString = imageString.split("\\").pop();
-  return "<div id='item-" + itemIndex + "' class='imgContainer'><img src='images/" + imageString + "'/><h1>" + itemIndex + ". "
-			+ header + "</h1><p> Price:" + p1 + "</p><p class = 'Description'> Description:" + p2 + "</p><p> Deliver option:" + p3 + "</p></div>";
+  return "<div id='item-" + itemIndex + "'><button class='close top'>X</button></div>";
+
 }
 
+function createItemDivString1(itemIndex, imageString, header, p1, p2, p3){
+	
+  return "<div class='imgContainer'><img src='images/" + imageString + "'/><h1>" + itemIndex + ". "
+			+ header + "</h1><p> Price:" + p1 + "</p><p class = 'Description'> Description:" + p2 + "</p><p> Deliver option:" + p3 + "</p></div>";
+			
+}
 
 function filterItems() {
     var input = document.getElementById("Search");
