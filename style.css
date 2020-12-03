@@ -173,6 +173,10 @@ html {
     float : right;
 }
 
+#clock{
+	right:100%
+}
+
 .close{}
 
 .top{
