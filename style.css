@@ -178,7 +178,8 @@ html {
 }
 
 #clock{
-	right:100%
+	position:relative;
+	right:100%;
 }
 
 .close{}

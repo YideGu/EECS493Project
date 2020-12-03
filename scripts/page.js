@@ -2,6 +2,7 @@ const maximumDescriptionLength = 90;
 
 
 $(document).ready( function() {
+	startTime();
     var title = $("#title");
     var price = $("#price");
     var description = $("#description");
