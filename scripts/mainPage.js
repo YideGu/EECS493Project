@@ -31,9 +31,9 @@ $('.close').click(function(){
 
 function onSignIn(googleUser){
 	$(".signinWindow").css("display", "none");
-	$(".event").css("display", "block");
+	// $(".event").css("display", "block");
 	$("#addWindow").css("display", "block");
-	$(".searchBox").css("display", "block");
+	// $(".searchBox").css("display", "block");
 	$(".btn-danger").css("visibility", "visible");
 }
 
@@ -42,9 +42,9 @@ function signOut() {
 	auth2.signOut().then(function(){
 
 		alert("You have been successfully signed out");
-		$(".event").css("display", "none");
+		// $(".event").css("display", "none");
 		$("#addWindow").css("display", "none");
-		$(".searchBox").css("display", "none");
+		// $(".searchBox").css("display", "none");
 		$(".btn-danger").css("visibility", "hidden");
 		$(".signinWindow").css("display", "block");
 	})
