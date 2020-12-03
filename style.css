@@ -204,3 +204,8 @@ html {
     display: flex;
     justify-content: center;
   }
+
+.price {
+    font-size: large;
+    font-weight: bold;
+}
