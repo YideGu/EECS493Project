@@ -30,7 +30,7 @@
 #addFormat{
 	display: flex;
 	align-items: flex-end;
-	
+
 }
 
 #flexbox{
@@ -205,7 +205,29 @@ html {
     justify-content: center;
   }
 
+<<<<<<< HEAD
 .price {
     font-size: large;
     font-weight: bold;
 }
+=======
+.event {
+  display: none;
+}
+
+#addWindow{
+  display: none;
+}
+
+.searchBox{
+  display: none;
+}
+
+.btn-danger{
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  z-index: 5;
+  visibility: hidden;
+}
+>>>>>>> ed5201dda04e197ba90416564ced98ef66b7e6ad
