@@ -315,3 +315,12 @@ ul ul a {
     top: 10px;
     z-index: 5;
 }
+
+.greeting-msg h1{
+  size: 10px;
+  color: white;
+}
+.greeting-msg {
+  position: relative;
+  right: 20px;
+}

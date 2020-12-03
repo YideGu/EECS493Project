@@ -57,5 +57,6 @@ function signOut() {
 		// $(".searchBox").css("display", "none");
 		$(".btn-danger").css("visibility", "hidden");
 		$(".signinWindow").css("display", "block");
+		$(".greeting-msg").remove();
 	})
 }
