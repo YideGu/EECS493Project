@@ -36,6 +36,10 @@ $('.close').click(function(){
 })
 
 function onSignIn(googleUser){
+	var profile = googleUser.getBasicProfile();
+	var name = profile.getGivenName();
+	var greeting = "<h1>Welcome " + name + "!</h1>";
+	$(".greeting-msg").append(greeting);
 	$(".signinWindow").css("display", "none");
 	// $(".event").css("display", "block");
 	$("#addWindow").css("display", "block");
