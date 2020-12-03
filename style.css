@@ -205,13 +205,11 @@ html {
     justify-content: center;
   }
 
-<<<<<<< HEAD
 .price {
     font-size: large;
     font-weight: bold;
 }
-=======
-.event {
+/* .event {
   display: none;
 }
 
@@ -221,7 +219,7 @@ html {
 
 .searchBox{
   display: none;
-}
+} */
 
 .btn-danger{
   position: absolute;
@@ -230,4 +228,3 @@ html {
   z-index: 5;
   visibility: hidden;
 }
->>>>>>> ed5201dda04e197ba90416564ced98ef66b7e6ad
