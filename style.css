@@ -209,7 +209,7 @@ html {
     font-size: large;
     font-weight: bold;
 }
-/* .event {
+.event {
   display: none;
 }
 
@@ -219,7 +219,7 @@ html {
 
 .searchBox{
   display: none;
-} */
+}
 
 .btn-danger{
   position: absolute;
