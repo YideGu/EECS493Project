@@ -1,4 +1,4 @@
-const maximumDescriptionLength = 180;
+const maximumDescriptionLength = 90;
 
 
 $(document).ready( function() {
