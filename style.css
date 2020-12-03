@@ -309,9 +309,18 @@ ul ul a {
     background: #6d7fcc;
 }
 
-.signinbtn{
+.signinbtn {
     position: absolute;
     right: 10px;
     top: 10px;
     z-index: 5;
+}
+
+h {
+  size: 10px;
+  color: white;
+}
+.greeting-msg {
+  position: relative;
+  right: 20px;
 }
