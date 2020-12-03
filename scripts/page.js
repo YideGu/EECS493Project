@@ -1,6 +1,7 @@
 const maximumDescriptionLength = 90;
 
 
+
 $(document).ready( function() {
 	// startTime();
     var title = $("#title");
@@ -18,33 +19,7 @@ $(document).ready( function() {
 	var toggle = $("#toggle");
 	var itemIndex = 9;
 	var itemButton;
-	var myData = [
-		{
-			Thumbnail: "images\\01515_6yyMIr4hDVG_600x450.jpg", 
-			itemTitle: "Jack", price: "Some info about me", 
-			description: "Some info about me"
-		},
-		{
-			Thumbnail: "images\\01515_6yyMIr4hDVG_600x450.jpg",  
-			itemTitle: "Jamie", price: "Some info about me", 
-			description: "Some info about me"
-		},
-		{
-			Thumbnail: "images\\01515_6yyMIr4hDVG_600x450.jpg",  
-			itemTitle: "Jamie", price: "Some info about me", 
-			description: "Some info about me"
-		},
-		{
-			Thumbnail: "images\\01515_6yyMIr4hDVG_600x450.jpg",  
-			itemTitle: "Jamie", price: "Some info about me", 
-			description: "Some info about me"
-		},
-		{
-			Thumbnail: "images\\01515_6yyMIr4hDVG_600x450.jpg",  
-			itemTitle: "Jamie", price: "Some info about me", 
-			description: "Some info about me"
-		}
-	];
+	
 
 	
 	title.hide();
@@ -179,11 +154,11 @@ $(document).ready( function() {
         filterItems();
     });
 
-    $('.Description').each(function(){
+    $('.descriptionClass').each(function(){
         // console("runned");
         this.innerText = truncateText(this, maximumDescriptionLength);
-    })  
-
+	})  
+	
 
     $('#Search').keydown(function(event){
           if(event.which == 13) filterItems();
