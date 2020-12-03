@@ -38,7 +38,7 @@ $('.close').click(function(){
 function onSignIn(googleUser){
 	var profile = googleUser.getBasicProfile();
 	var name = profile.getGivenName();
-	var greeting = "<h1>Welcome " + name + "!</h1>";
+	var greeting = "<h>Welcome " + name + "!</h>";
 	$(".greeting-msg").append(greeting);
 	$(".signinWindow").css("display", "none");
 	// $(".event").css("display", "block");
@@ -57,6 +57,6 @@ function signOut() {
 		// $(".searchBox").css("display", "none");
 		$(".btn-danger").css("visibility", "hidden");
 		$(".signinWindow").css("display", "block");
-		$(".greeting-msg").remove();
+		$("h").remove();
 	})
 }
