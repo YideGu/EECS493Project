@@ -305,12 +305,12 @@ function checkTime(i) {
 // }
 
 function signIn() {
-  window.location.href='loginPage.html';
   $(".signinWindow").css("display", "none");
   // $(".event").css("display", "block");
   $("#addWindow").css("display", "block");
   // $(".searchBox").css("display", "block");
   $(".btn-danger").css("visibility", "visible");
+  window.location.href='loginPage.html';
 }
 
 function signOut() {
