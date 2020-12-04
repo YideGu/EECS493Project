@@ -61,11 +61,11 @@
 
                     <div id = "addWindow">
                         <span id="addFormat">
-                            <button id = "addButton" style="margin-left: 5px;" type="button">Add item for sale</button>
-                            <button id = "removeButton" style="margin-left: 5px;" type="button">Remove sold items</button>
-                            <button id = "PublishButton" style="margin-left: 5px;" type="button">Publish</button>
-                            <button id = "DeleteButton" style="margin-left: 5px;" type="button">Remove</button>
-                            <button id = "CancelButton" style="margin-left: 5px;" type="button">Cancel</button>
+                            <button id = "addButton" class = "positiveButton" style="margin-left: 5px;" type="button">Add item for sale</button>
+                            <button id = "removeButton" class = "negativeButton" style="margin-left: 5px;" type="button">Remove sold items</button>
+                            <button id = "PublishButton" class = "positiveButton" style="margin-left: 5px;" type="button">Publish</button>
+                            <button id = "DeleteButton" class = "negativeButton" style="margin-left: 5px;" type="button">Remove</button>
+                            <button id = "CancelButton" class = "negativeButton" style="margin-left: 5px;" type="button">Cancel</button>
                         </span>
                         <div id = "inputWindow">
                             <input id = "removeNumber" type="text" id="fname" name="fname" size="80" placeholder="number">
@@ -77,7 +77,7 @@
                             <!-- <input id = "image" type="text" id="fname" name="fname" size="80" placeholder="image"> -->
                             <div id = "image">
                                 <p style = "margin-bottom: 0px;"> Select an image to add.</p>
-                                <input type="file" name="fname">
+                                <input id = "imageString" type="file" name="fname">
                             </div>
                         </div>
                     </div>

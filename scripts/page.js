@@ -149,9 +149,9 @@ $(document).ready( function() {
 		description.hide();
 		delivery.hide();
 		contactInformation.hide();
-		var result = createItemDivString(itemIndex, imagestring.val(),title.val(),price.val(),description.val(),delivery.val());
+		var result = createItemDivString(itemIndex, $("#imageString").val(),title.val(),price.val(),description.val(),delivery.val());
 		operationZone.append(result);
-		$("#item-"+itemIndex).append(createItemDivString1(itemIndex++, imagestring.val(),title.val(),price.val(),description.val(),delivery.val()));
+		$("#item-"+itemIndex).append(createItemDivString1(itemIndex++, $("#imageString").val(),title.val(),price.val(),description.val(),delivery.val()));
 	});
 	
 	$('#rm').click(function(){
@@ -190,8 +190,17 @@ function createItemDivString(itemIndex, imageString, header, p1, p2, p3){
 
 function createItemDivString1(itemIndex, imageString, header, p1, p2, p3){
 	
-  return "<div class='imgContainer'><img src='images/" + imageString + "'/><h1>" + itemIndex + ". "
-			+ header + "</h1><p> Price:" + p1 + "</p><p class = 'Description'> Description:" + p2 + "</p><p> Deliver option:" + p3 + "</p></div>";
+	imageString = imageString.split("\\").pop();
+	var newData = [
+		{
+			Thumbnail: imageString, 
+			itemTitle: header, price: p1, 
+			description: p2,
+			delivery: p3,
+			seller: googleUser.getBasicProfile().getEmail()
+		}]
+	$("#myTemplate").tmpl(newData).appendTo("#flexbox");
+  	return "";
 			
 }
 
@@ -231,3 +240,29 @@ function checkTime(i) {
   return i;
 }
 
+
+function onSignIn(googleUser){
+	var profile = googleUser.getBasicProfile();
+	var name = profile.getGivenName();
+	var greeting = "<h>Welcome " + name + "!</h>";
+	$(".greeting-msg").append(greeting);
+	$(".signinWindow").css("display", "none");
+	// $(".event").css("display", "block");
+	$("#addWindow").css("display", "block");
+	// $(".searchBox").css("display", "block");
+	$(".btn-danger").css("visibility", "visible");
+}
+
+function signOut() {
+	var auth2 = gapi.auth2.getAuthInstance();
+	auth2.signOut().then(function(){
+
+		alert("You have been successfully signed out");
+		// $(".event").css("display", "none");
+		$("#addWindow").css("display", "none");
+		// $(".searchBox").css("display", "none");
+		$(".btn-danger").css("visibility", "hidden");
+		$(".signinWindow").css("display", "block");
+		$("h").remove();
+	})
+}
