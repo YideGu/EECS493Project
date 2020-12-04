@@ -1,8 +1,5 @@
 const maximumDescriptionLength = 90;
 
-
-localStorage.setItem("reload", JSON.stringify(false));
-localStorage.setItem("greeting_exsit", JSON.stringify(false));
 var email = "Anonynous email address"
 
 
@@ -187,15 +184,18 @@ $(document).ready( function() {
   }, 50);
 
   setInterval(function(){
-    var reload = JSON.parse(localStorage.getItem("reload"));
-    var greeting_exsit = JSON.parse(localStorage.getItem("greeting_exsit"));
-      if (reload && !greeting_exsit) {
-        email = localStorage.getItem("email");
-        var name = localStorage.getItem("User_name");
-        var greeting = "<h>Welcome " + name + "!</h>";
-      	$(".greeting-msg").append(greeting);
-        localStorage.setItem("greeting_exsit", JSON.stringify(true));
-      }
+    if (localStorage.getItem("reload") === null) {}
+    else {
+      var reload = JSON.parse(localStorage.getItem("reload"));
+      var greeting_exsit = JSON.parse(localStorage.getItem("greeting_exsit"));
+        if (reload && !greeting_exsit) {
+          email = localStorage.getItem("email");
+          var name = localStorage.getItem("User_name");
+          var greeting = "<h>Welcome " + name + "!</h>";
+          $(".greeting-msg").append(greeting);
+          localStorage.setItem("greeting_exsit", JSON.stringify(true));
+        }
+    }
   }, 1000);
 
 function createItemDivString(itemIndex, imageString, header, p1, p2, p3){
@@ -324,7 +324,7 @@ function signOut() {
 		$(".btn-danger").css("visibility", "hidden");
 		$(".signinWindow").css("display", "block");
 		$("h").remove();
-    localStorage.setItem("greeting_exsit", JSON.stringify(false));
-    localStorage.setItem("reload", JSON.stringify(false));
+    localStorage.removeItem("greeting_exsit");
+    localStorage.removeItem("reload");
 	})
 }
