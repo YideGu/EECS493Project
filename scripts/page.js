@@ -1,11 +1,9 @@
 const maximumDescriptionLength = 90;
 
 
-sessionStorage.setItem("reload", false);
-sessionStorage.setItem("greeting_exsit", false);
+localStorage.setItem("reload", JSON.stringify(false));
+localStorage.setItem("greeting_exsit", JSON.stringify(false));
 var email = "Anonynous email address"
-var reload = sessionStorage.getItem("reload");
-var greeting_exsit = sessionStorage.getItem("greeting_exsit");
 
 
 
@@ -189,12 +187,14 @@ $(document).ready( function() {
   }, 50);
 
   setInterval(function(){
+    var reload = JSON.parse(localStorage.getItem("reload"));
+    var greeting_exsit = JSON.parse(localStorage.getItem("greeting_exsit"));
       if (reload && !greeting_exsit) {
         email = localStorage.getItem("email");
         var name = localStorage.getItem("User_name");
         var greeting = "<h>Welcome " + name + "!</h>";
       	$(".greeting-msg").append(greeting);
-        sessionStorage.setItem("greeting_exsit", true);
+        localStorage.setItem("greeting_exsit", JSON.stringify(true));
       }
   }, 1000);
 
@@ -324,7 +324,7 @@ function signOut() {
 		$(".btn-danger").css("visibility", "hidden");
 		$(".signinWindow").css("display", "block");
 		$("h").remove();
-    sessionStorage.setItem("greeting_exsit", false);
-    sessionStorage.setItem("reload", false);
+    localStorage.setItem("greeting_exsit", JSON.stringify(false));
+    localStorage.setItem("reload", JSON.stringify(false));
 	})
 }
