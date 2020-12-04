@@ -7,11 +7,11 @@ var myData = [
         seller: "bot001@umich.edu"
     },
     {
-        Thumbnail: "images\\00B0B_9fVMEesNeVP_600x450.jpg",  
-        itemTitle: " 7 NEW -GE Biax T/E ECO 26 W 4 PIN CFL Bulbs", price: "25", 
-        description: "New, 7 NEW -GE Biax T/E ECO 26 W 4 PIN CFL Bulbs.",
-        delivery: "Ann Arbor.",
-        seller: "bot001@umich.edu"
+        Thumbnail: "images\\00c0c_lKha13X1zxA_0CI0t2_600x450.jpg",  
+        itemTitle: "2009 Dodge Grand Caravan", price: "3,900", 
+        description: "I offer my 2009 Dodge Grand Caravan for sale. It has a V6 engine with an automatic transmission. Options include full power stereo cd, alloy wheels, a/c, stow and go and more. The body is very clean although it has a few minor blemishes as should be expected. The interior is also very clean with no damage or harsh wear. It has 165k miles and runs-drives excellent without issues. Please call",
+        delivery: "50 miles around Ann Arbor.",
+        seller: "bot117@umich.edu"
     },
     {
         Thumbnail: "images\\00i0i_hKD0SWvt1zv_0hq0oT_600x450.jpg",  
@@ -28,11 +28,39 @@ var myData = [
         seller: "bot001@umich.edu"
     },
     {
+        Thumbnail: "images\\01111_fII8bGxWQPN_0lM0t2_600x450.jpg",  
+        itemTitle: "Montana Acoustic-Electric Guitar", price: "80", 
+        description: "I have a Compaq Presario with keyboard and monitor for sale everything works but the computer needs a new hard drive.",
+        delivery: "$75 cash and local pick up in Hartland Michigan only.",
+        seller: "bot196@umich.edu"
+    },
+    {
+        Thumbnail: "images\\00808_aMpvBDBlyYv_0CI0t2_600x450.jpg",  
+        itemTitle: "Compaq computer system", price: "75", 
+        description: "Montana EM28C-B acoustic-electric guitar. Great learner instrument or campfire guitar, plays well. Head has been hit a couple times and shows some small dents (pictured), and there's a very slight crack at the base of the back of the neck (pictured), but it's been stable like that for a long time without widening, and the action is a tad high but quite playable. Have never plugged it in and don't have the equipment to do so so I can't speak to its function or quality on that regard. All around nice guitar, I just need to thin the collection. No case.",
+        delivery: "Central Campus.",
+        seller: "bot096@umich.edu"
+    },
+    {
         Thumbnail: "images\\01515_6yyMIr4hDVG_600x450.jpg",  
         itemTitle: "HP 64 Ink Cartridge 2 Pack Brand New!", price: "19", 
         description: "Brand New in Box. Never open or used. Paid $40+. Bought new printer.",
         delivery: "Within 10 miles of North Campus",
         seller: "bot001@umich.edu"
+    },
+    {
+        Thumbnail: "images\\00B0B_9fVMEesNeVP_600x450.jpg",  
+        itemTitle: " 7 NEW -GE Biax T/E ECO 26 W 4 PIN CFL Bulbs", price: "25", 
+        description: "New, 7 NEW -GE Biax T/E ECO 26 W 4 PIN CFL Bulbs.",
+        delivery: "Ann Arbor. $5 for delivery",
+        seller: "bot001@umich.edu"
+    },
+    {
+        Thumbnail: "images\\00m0m_1WhH3DhImCC_09G0cU_600x450.jpg",  
+        itemTitle: "Red EX Ibanez", price: "180", 
+        description: "very clean EX170 ready to rock.",
+        delivery: "Ann Arbor. $5 for delivery",
+        seller: "bot080@umich.edu"
     },
     {
         Thumbnail: "images\\00o0o_cFieU7ZLchn_0BC0t2_600x450.jpg",  
@@ -72,8 +100,10 @@ var myData = [
         "Raised lips around camera and screen to stay untouched"+
         "Our case is designed to be compatible with a Spigen brand screen protector"+
         "iPad Pro 12.9 2018 Case only Compatible with iPad Pro 12.9 inch Case (2018). Not Compatible with iPad Pro 12.9 2020/2017/2015 and other iPad models",
-        delivery: "pick up only.",
+        delivery: "50 miles around Ann Arbor",
         seller: "bot004@umich.edu"
     }
+
+    
 ];
 

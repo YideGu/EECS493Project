@@ -7,7 +7,8 @@ $(document).ready( function() {
     var title = $("#title");
     var price = $("#price");
     var description = $("#description");
-    var delivery = $("#delivery");
+	var delivery = $("#delivery");
+	var contactInformation = $('#contactInformation');
     var addButton = $("#addButton");
     var PublishButton = $("#PublishButton");
     var CancelButton = $("#CancelButton");
@@ -31,6 +32,7 @@ $(document).ready( function() {
 	removeNumber.hide();
 	PublishButton.hide();
 	CancelButton.hide();
+	contactInformation.hide();
 	
 	
 	
@@ -75,6 +77,7 @@ $(document).ready( function() {
 	addButton.click(function(){
 		PublishButton.show();
 		CancelButton.show();
+		contactInformation.show();
 		DeleteButton.hide();
 		imagestring.show();
 		addButton.hide();
@@ -109,6 +112,7 @@ $(document).ready( function() {
 		price.hide();
 		description.hide();
 		delivery.hide();
+		contactInformation.hide();
 		removeNumber.hide();
 	});
 	
@@ -143,6 +147,7 @@ $(document).ready( function() {
 		price.hide();
 		description.hide();
 		delivery.hide();
+		contactInformation.hide();
 		var result = createItemDivString(itemIndex, imagestring.val(),title.val(),price.val(),description.val(),delivery.val());
 		operationZone.append(result);
 		$("#item-"+itemIndex).append(createItemDivString1(itemIndex++, imagestring.val(),title.val(),price.val(),description.val(),delivery.val()));
