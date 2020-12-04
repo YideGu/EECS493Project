@@ -319,17 +319,26 @@ function signIn() {
 }
 
 function signOut() {
-	var auth2 = gapi.auth2.getAuthInstance();
-	auth2.signOut().then(function(){
-
-		alert("You have been successfully signed out");
-		// $(".event").css("display", "none");
-		$("#addWindow").css("display", "none");
-		// $(".searchBox").css("display", "none");
-		$(".btn-danger").css("visibility", "hidden");
-		$(".signinWindow").css("display", "block");
-		$("h").remove();
-    localStorage.removeItem("greeting_exsit");
-    localStorage.removeItem("reload");
-	})
+	// var auth2 = gapi.auth2.getAuthInstance();
+	// auth2.signOut().then(function(){
+  //
+	// 	alert("You have been successfully signed out");
+	// 	// $(".event").css("display", "none");
+	// 	$("#addWindow").css("display", "none");
+	// 	// $(".searchBox").css("display", "none");
+	// 	$(".btn-danger").css("visibility", "hidden");
+	// 	$(".signinWindow").css("display", "block");
+	// 	$("h").remove();
+  //   localStorage.removeItem("greeting_exsit");
+  //   localStorage.removeItem("reload");
+	// })
+  alert("You have been successfully signed out");
+	// $(".event").css("display", "none");
+	$("#addWindow").css("display", "none");
+	// $(".searchBox").css("display", "none");
+	$(".btn-danger").css("visibility", "hidden");
+	$(".signinWindow").css("display", "block");
+	$("h").remove();
+  localStorage.removeItem("greeting_exsit");
+  localStorage.removeItem("reload");
 }

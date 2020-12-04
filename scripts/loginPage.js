@@ -7,7 +7,9 @@ $(document).ready(function() {
     localStorage.setItem("User_name", name);
     localStorage.setItem("email", email);
     localStorage.setItem("reload", true);
-
+    localStorage.setItem("greeting_exsit", JSON.stringify(false));
+    var auth2 = gapi.auth2.getAuthInstance();
+    auth2.signOut()
     window.location.href='index.html';
   }
 function renderButton() {
