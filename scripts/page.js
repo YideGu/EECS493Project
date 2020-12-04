@@ -22,8 +22,8 @@ $(document).ready( function() {
 	var toggle = $("#toggle");
 	var itemIndex = 9;
 	var itemButton;
-	
-	
+
+
 	title.hide();
 	price.hide();
 	description.hide();
@@ -34,9 +34,9 @@ $(document).ready( function() {
 	removeNumber.hide();
 	PublishButton.hide();
 	CancelButton.hide();
-	
-	
-	
+
+
+
 	// Use the template
 	$("#myTemplate").tmpl(myData).appendTo("#flexbox");
 
@@ -44,26 +44,26 @@ $(document).ready( function() {
 		if ($("#addWindow").css("display") == "none") {
 			alert("Please sign in to see more information!");
 		}
-	
+
 		else {
 			// redirect to the buyer page
 			window.location.href='buyerPage.html';
-	
+
 			// store the item info in local storage
 			var img_src = $(this).find('img').attr('src');
 			localStorage.setItem('img_src', img_src);
-	
+
 			var item_name = $(this).find('h1').text();
 			localStorage.setItem('item_name', item_name);
-	
+
 			var item_price = $(this).find('.priceClass').eq(0).text();
 			localStorage.setItem('item_price', item_price);
 			console.log(item_price);
-	
+
 			var item_description = $(this).find('.longDescription').text();
 			localStorage.setItem('item_description', item_description);
 			console.log(item_description);
-	
+
 			var delivery_option = $(this).find('.deliveryClass').text();
 			localStorage.setItem('delivery_option', delivery_option);
 			console.log(delivery_option);
@@ -74,7 +74,7 @@ $(document).ready( function() {
 		}
 	})
 
-	
+
 	addButton.click(function(){
 		PublishButton.show();
 		CancelButton.show();
@@ -82,24 +82,24 @@ $(document).ready( function() {
 		imagestring.show();
 		addButton.hide();
 		removeButton.hide();
-		
+
 		title.show();
 		price.show();
 		description.show();
 		delivery.show();
 		contactInformation.show();
 	});
-	
+
 	removeButton.click(function(){
 		PublishButton.hide();
 		CancelButton.show();
 		DeleteButton.show();
 		addButton.hide();
 		removeButton.hide();
-		
+
 		removeNumber.show();
 	});
-	
+
 	CancelButton.click(function(){
 		PublishButton.hide();
 		CancelButton.hide();
@@ -107,8 +107,8 @@ $(document).ready( function() {
 		imagestring.hide();
 		addButton.show();
 		removeButton.show();
-		
-		
+
+
 		title.hide();
 		price.hide();
 		description.hide();
@@ -116,7 +116,7 @@ $(document).ready( function() {
 		contactInformation.hide();
 		removeNumber.hide();
 	});
-	
+
 	DeleteButton.click(function(){
 		PublishButton.hide();
 		CancelButton.hide();
@@ -124,11 +124,11 @@ $(document).ready( function() {
 		imagestring.hide();
 		addButton.show();
 		removeButton.show();
-		
+
 		temp= "#item-" + removeNumber.val();
 		temp = $("#item-" + removeNumber.val());
 		temp.remove();
-		
+
 		title.hide();
 		price.hide();
 		description.hide();
@@ -136,7 +136,7 @@ $(document).ready( function() {
 		contactInformation.hide();
 		removeNumber.hide();
 	});
-	
+
 	PublishButton.click(function(){
 		PublishButton.hide();
 		CancelButton.hide();
@@ -144,7 +144,7 @@ $(document).ready( function() {
 		imagestring.hide();
 		addButton.show();
 		removeButton.show()
-		
+
 		title.hide();
 		price.hide();
 		description.hide();
@@ -154,11 +154,11 @@ $(document).ready( function() {
 		operationZone.append(result);
 		$("#item-"+itemIndex).append(createItemDivString1(itemIndex++, $("#imageString").val(),title.val(),price.val(),description.val(),delivery.val()));
 	});
-	
+
 	$('#rm').click(function(){
 		$(this).parent().remove();
 	})
-	
+
     console.log("Ready!");
     $('#SearchButton').click(()=> {
         console.log("clicked!")
@@ -168,8 +168,8 @@ $(document).ready( function() {
     $('.descriptionClass').each(function(){
         // console("runned");
         this.innerText = truncateText(this, maximumDescriptionLength);
-	})  
-	
+	})
+
 
     $('#Search').keydown(function(event){
           if(event.which == 13) filterItems();
@@ -177,7 +177,7 @@ $(document).ready( function() {
 });
 
   setInterval( function() {
-	  
+
 	$('.close').click(function(){
     $(this).parent().remove();
 })
@@ -190,12 +190,12 @@ function createItemDivString(itemIndex, imageString, header, p1, p2, p3){
 }
 
 function createItemDivString1(itemIndex, imageString, header, p1, p2, p3){
-	
+
 	imageString = imageString.split("\\").pop();
 	var newData = [
 		{
-			Thumbnail: "images\\" + imageString, 
-			itemTitle: header, price: p1, 
+			Thumbnail: "images\\" + imageString,
+			itemTitle: header, price: p1,
 			description: p2,
 			delivery: p3,
 			seller: email
@@ -205,26 +205,26 @@ function createItemDivString1(itemIndex, imageString, header, p1, p2, p3){
 		if ($("#addWindow").css("display") == "none") {
 			alert("Please sign in to see more information!");
 		}
-	
+
 		else {
 			// redirect to the buyer page
 			window.location.href='buyerPage.html';
-	
+
 			// store the item info in local storage
 			var img_src = $(this).find('img').attr('src');
 			localStorage.setItem('img_src', img_src);
-	
+
 			var item_name = $(this).find('h1').text();
 			localStorage.setItem('item_name', item_name);
-	
+
 			var item_price = $(this).find('.priceClass').eq(0).text();
 			localStorage.setItem('item_price', item_price);
 			console.log(item_price);
-	
+
 			var item_description = $(this).find('.longDescription').text();
 			localStorage.setItem('item_description', item_description);
 			console.log(item_description);
-	
+
 			var delivery_option = $(this).find('.deliveryClass').text();
 			localStorage.setItem('delivery_option', delivery_option);
 			console.log(delivery_option);
@@ -236,14 +236,14 @@ function createItemDivString1(itemIndex, imageString, header, p1, p2, p3){
 	});
 	// myData = Object.assign({}, myData, newData);
   	return "";
-			
+
 }
 
 function filterItems() {
     var input = document.getElementById("Search");
     var filter = input.value.toLowerCase();
     var nodes = document.getElementsByClassName('imgContainer');
-  
+
     for (i = 0; i < nodes.length; i++) {
       if (nodes[i].innerText.toLowerCase().includes(filter)) {
         nodes[i].parentElement.style.display = "inline-block";
@@ -287,6 +287,11 @@ function onSignIn(googleUser){
 	$("#addWindow").css("display", "block");
 	// $(".searchBox").css("display", "block");
 	$(".btn-danger").css("visibility", "visible");
+  window.location.href='index.html';
+}
+
+function signIn() {
+  window.location.href='loginPage.html';
 }
 
 function signOut() {

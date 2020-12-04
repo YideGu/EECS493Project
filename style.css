@@ -309,7 +309,7 @@ ul ul a {
     background: #6d7fcc;
 }
 
-.signinbtn {
+.btn-default {
     position: relative;
     right: 10px;
     top: 10px;
@@ -340,4 +340,20 @@ border-radius: 100px;
 color: #fff;
 text-decoration: none;
 border: none;
+}
+
+
+#signin-msg {
+  font-size: 40px;
+}
+
+.signin-intro {
+  position: relative;
+  text-align: center;
+  top: 80px;
+}
+.condition-terms {
+  margin-top: 25px;
+  margin-left: 300px;
+  margin-right: 300px;
 }
