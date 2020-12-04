@@ -232,7 +232,7 @@ html {
 } */
 
 .btn-danger{
-  position: absolute;
+  position: relative;
   right: 10px;
   top: 10px;
   z-index: 5;
@@ -310,7 +310,7 @@ ul ul a {
 }
 
 .signinbtn {
-    position: absolute;
+    position: relative;
     right: 10px;
     top: 10px;
     z-index: 5;
