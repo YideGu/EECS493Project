@@ -8,7 +8,7 @@ $(document).ready( function() {
     var price = $("#price");
     var description = $("#description");
 	var delivery = $("#delivery");
-	var contactInformation = $('#contactInformation');
+	var contactInformation = $("#contactInformation");
     var addButton = $("#addButton");
     var PublishButton = $("#PublishButton");
     var CancelButton = $("#CancelButton");
@@ -28,11 +28,11 @@ $(document).ready( function() {
 	description.hide();
 	DeleteButton.hide();
 	delivery.hide();
+	contactInformation.hide();
 	imagestring.hide();
 	removeNumber.hide();
 	PublishButton.hide();
 	CancelButton.hide();
-	contactInformation.hide();
 	
 	
 	
@@ -77,7 +77,6 @@ $(document).ready( function() {
 	addButton.click(function(){
 		PublishButton.show();
 		CancelButton.show();
-		contactInformation.show();
 		DeleteButton.hide();
 		imagestring.show();
 		addButton.hide();
@@ -87,6 +86,7 @@ $(document).ready( function() {
 		price.show();
 		description.show();
 		delivery.show();
+		contactInformation.show();
 	});
 	
 	removeButton.click(function(){
@@ -132,6 +132,7 @@ $(document).ready( function() {
 		price.hide();
 		description.hide();
 		delivery.hide();
+		contactInformation.hide();
 		removeNumber.hide();
 	});
 	
