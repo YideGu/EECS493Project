@@ -1,5 +1,7 @@
 const maximumDescriptionLength = 90;
 
+var email = "Anonynous email address"
+
 
 
 $(document).ready( function() {
@@ -21,7 +23,6 @@ $(document).ready( function() {
 	var itemIndex = 9;
 	var itemButton;
 	
-
 	
 	title.hide();
 	price.hide();
@@ -184,7 +185,7 @@ $(document).ready( function() {
 
 function createItemDivString(itemIndex, imageString, header, p1, p2, p3){
   imageString = imageString.split("\\").pop();
-  return "<div id='item-" + itemIndex + "'><button class='close top'>X</button></div>";
+  return "";
 
 }
 
@@ -193,13 +194,14 @@ function createItemDivString1(itemIndex, imageString, header, p1, p2, p3){
 	imageString = imageString.split("\\").pop();
 	var newData = [
 		{
-			Thumbnail: imageString, 
+			Thumbnail: "images\\" + imageString, 
 			itemTitle: header, price: p1, 
 			description: p2,
 			delivery: p3,
-			seller: googleUser.getBasicProfile().getEmail()
+			seller: email
 		}]
 	$("#myTemplate").tmpl(newData).appendTo("#flexbox");
+	// myData = Object.assign({}, myData, newData);
   	return "";
 			
 }
@@ -244,6 +246,7 @@ function checkTime(i) {
 function onSignIn(googleUser){
 	var profile = googleUser.getBasicProfile();
 	var name = profile.getGivenName();
+	email = profile.getEmail();
 	var greeting = "<h>Welcome " + name + "!</h>";
 	$(".greeting-msg").append(greeting);
 	$(".signinWindow").css("display", "none");

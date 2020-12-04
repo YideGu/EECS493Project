@@ -332,12 +332,12 @@ h {
     text-decoration: none;
     border: none;
     margin-left: 0px;
-  }
+}
 
-  .negativeButton {
-    background: #1f436d;
-    border-radius: 100px;
-    color: #fff;
-    text-decoration: none;
-    border: none;
-  }
+.negativeButton {
+background: #1f436d;
+border-radius: 100px;
+color: #fff;
+text-decoration: none;
+border: none;
+}
