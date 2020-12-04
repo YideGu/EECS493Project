@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-  function onSucess(googleUser){
+  function onSuccess(googleUser){
   	var profile = googleUser.getBasicProfile();
   	var name = profile.getGivenName();
   	var email = profile.getEmail();
