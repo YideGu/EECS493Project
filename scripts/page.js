@@ -1,8 +1,8 @@
 const maximumDescriptionLength = 90;
 
 
-sessionStorage.setItem("reload", "false");
-sessionStorage.setItem("greeting_exsit", "false");
+sessionStorage.setItem("reload", false);
+sessionStorage.setItem("greeting_exsit", false);
 var email = "Anonynous email address"
 var reload = sessionStorage.getItem("reload");
 var greeting_exsit = sessionStorage.getItem("greeting_exsit");
@@ -188,6 +188,16 @@ $(document).ready( function() {
 })
   }, 50);
 
+  setInterval(function(){
+      if (reload && !greeting_exsit) {
+        email = localStorage.getItem("email");
+        var name = localStorage.getItem("User_name");
+        var greeting = "<h>Welcome " + name + "!</h>";
+      	$(".greeting-msg").append(greeting);
+        sessionStorage.setItem("greeting_exsit", true);
+      }
+  }, 1000);
+
 function createItemDivString(itemIndex, imageString, header, p1, p2, p3){
   imageString = imageString.split("\\").pop();
   return "";
@@ -314,17 +324,7 @@ function signOut() {
 		$(".btn-danger").css("visibility", "hidden");
 		$(".signinWindow").css("display", "block");
 		$("h").remove();
-    sessionStorage.setItem("greeting_exsit", "false");
-    sessionStorage.setItem("reload", "false");
+    sessionStorage.setItem("greeting_exsit", false);
+    sessionStorage.setItem("reload", false);
 	})
 }
-
-setInterval(function(){
-    if (reload && !greeting_exsit) {
-      email = localStorage.getItem("email");
-      var name = localStorage.getItem("User_name");
-      var greeting = "<h>Welcome " + name + "!</h>";
-    	$(".greeting-msg").append(greeting);
-      sessionStorage.setItem("greeting_exsit", "true");
-    }
-}, 1000);

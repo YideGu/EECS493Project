@@ -6,7 +6,7 @@ $(document).ready(function() {
   	var email = profile.getEmail();
     localStorage.setItem("User_name", name);
     localStorage.setItem("email", email);
-    localStorage.setItem("reload", "true");
+    localStorage.setItem("reload", true);
 
     window.location.href='index.html';
   }
