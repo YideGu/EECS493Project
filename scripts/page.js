@@ -186,6 +186,11 @@ $(document).ready( function() {
   setInterval(function(){
     if (localStorage.getItem("reload") === null) {}
     else {
+      $(".signinWindow").css("display", "none");
+      // $(".event").css("display", "block");
+      $("#addWindow").css("display", "block");
+      // $(".searchBox").css("display", "block");
+      $(".btn-danger").css("visibility", "visible");
       var reload = JSON.parse(localStorage.getItem("reload"));
       var greeting_exsit = JSON.parse(localStorage.getItem("greeting_exsit"));
         if (reload && !greeting_exsit) {
@@ -305,11 +310,11 @@ function checkTime(i) {
 // }
 
 function signIn() {
-  $(".signinWindow").css("display", "none");
-  // $(".event").css("display", "block");
-  $("#addWindow").css("display", "block");
-  // $(".searchBox").css("display", "block");
-  $(".btn-danger").css("visibility", "visible");
+  // $(".signinWindow").css("display", "none");
+  // // $(".event").css("display", "block");
+  // $("#addWindow").css("display", "block");
+  // // $(".searchBox").css("display", "block");
+  // $(".btn-danger").css("visibility", "visible");
   window.location.href='loginPage.html';
 }
 
