@@ -232,7 +232,7 @@ html {
 } */
 
 .btn-danger{
-  position: relative;
+  position: absolute;
   right: 10px;
   top: 10px;
   z-index: 5;
@@ -310,7 +310,7 @@ ul ul a {
 }
 
 .btn-primary {
-    position: relative;
+    position: absolute;
     right: 10px;
     top: 10px;
     z-index: 5;
@@ -353,10 +353,11 @@ border: none;
   top: 80px;
 }
 .condition-terms {
-  margin-top: 25px;
-  margin-left: 300px;
-  margin-right: 300px;
+  position: relative;
+  margin-top: 100px;
+  margin-left: 350px;
+  margin-right: 350px;
+  text-align: center;
 }
-.signinbtn {
-  
+#my-signin2 {
 }
