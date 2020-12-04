@@ -309,7 +309,7 @@ ul ul a {
     background: #6d7fcc;
 }
 
-.btn-default {
+.btn-primary {
     position: relative;
     right: 10px;
     top: 10px;
@@ -356,4 +356,7 @@ border: none;
   margin-top: 25px;
   margin-left: 300px;
   margin-right: 300px;
+}
+.signinbtn {
+  
 }

@@ -1,6 +1,11 @@
 const maximumDescriptionLength = 90;
 
+
+sessionStorage.setItem("reload", "false");
+sessionStorage.setItem("greeting_exsit", "false");
 var email = "Anonynous email address"
+var reload = sessionStorage.getItem("reload");
+var greeting_exsit = sessionStorage.getItem("greeting_exsit");
 
 
 
@@ -276,22 +281,26 @@ function checkTime(i) {
 }
 
 
-function onSignIn(googleUser){
-	var profile = googleUser.getBasicProfile();
-	var name = profile.getGivenName();
-	email = profile.getEmail();
-	var greeting = "<h>Welcome " + name + "!</h>";
-	$(".greeting-msg").append(greeting);
-	$(".signinWindow").css("display", "none");
-	// $(".event").css("display", "block");
-	$("#addWindow").css("display", "block");
-	// $(".searchBox").css("display", "block");
-	$(".btn-danger").css("visibility", "visible");
-  window.location.href='index.html';
-}
+// function onSignIn(googleUser){
+// 	var profile = googleUser.getBasicProfile();
+// 	var name = profile.getGivenName();
+// 	email = profile.getEmail();
+//
+// 	// $(".signinWindow").css("display", "none");
+// 	// // $(".event").css("display", "block");
+// 	// $("#addWindow").css("display", "block");
+// 	// // $(".searchBox").css("display", "block");
+// 	// $(".btn-danger").css("visibility", "visible");
+//   window.location.href='index.html';
+// }
 
 function signIn() {
   window.location.href='loginPage.html';
+  $(".signinWindow").css("display", "none");
+  // $(".event").css("display", "block");
+  $("#addWindow").css("display", "block");
+  // $(".searchBox").css("display", "block");
+  $(".btn-danger").css("visibility", "visible");
 }
 
 function signOut() {
@@ -305,5 +314,17 @@ function signOut() {
 		$(".btn-danger").css("visibility", "hidden");
 		$(".signinWindow").css("display", "block");
 		$("h").remove();
+    sessionStorage.setItem("greeting_exsit", "false");
+    sessionStorage.setItem("reload", "false");
 	})
 }
+
+setInterval(function(){
+    if (reload && !greeting_exsit) {
+      email = localStorage.getItem("email");
+      var name = localStorage.getItem("User_name");
+      var greeting = "<h>Welcome " + name + "!</h>";
+    	$(".greeting-msg").append(greeting);
+      sessionStorage.setItem("greeting_exsit", "true");
+    }
+}, 1000);
