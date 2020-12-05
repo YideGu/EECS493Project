@@ -4,6 +4,7 @@ var email = "Anonynous email address";
 var myPostedData = [];
 
 
+
 $(document).ready( function() {
 	// startTime();
     var title = $("#title");
@@ -22,6 +23,9 @@ $(document).ready( function() {
 	var toggle = $("#toggle");
 	var itemIndex = 9;
 	var itemButton;
+
+	if(localStorage.getItem('myData') != null) myData = JSON.parse(localStorage.getItem('myData'));
+	if(localStorage.getItem('myPostedData') != null) myPostedData = JSON.parse(localStorage.getItem('myPostedData'));
 
 
 	title.hide();
@@ -88,6 +92,9 @@ $(document).ready( function() {
 			var seller_information = $(this).find('.sellerClass').text();
 			localStorage.setItem('seller_information', seller_information);
 			console.log(seller_information);
+
+			localStorage.setItem('myData', JSON.stringify(myData));
+			localStorage.setItem('myPostedData', JSON.stringify(myPostedData));
 		}
 	})
 
@@ -361,6 +368,9 @@ function createItemDivString1(itemIndex, imageString, header, p1, p2, p3){
 			var seller_information = $(this).find('.sellerClass').text();
 			localStorage.setItem('seller_information', seller_information);
 			console.log(seller_information);
+
+			localStorage.setItem('myData', JSON.stringify(myData));
+			localStorage.setItem('myPostedData', JSON.stringify(myPostedData));
 		}
 	});
 	// myData = Object.assign({}, myData, newData);
