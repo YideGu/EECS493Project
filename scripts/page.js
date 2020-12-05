@@ -215,15 +215,17 @@ $(document).ready( function() {
           $(".greeting-msg").append(greeting);
           localStorage.setItem("greeting_exsit", JSON.stringify(true));
         }
-    }
+	}
+	
+	$('.close').click(function(){
+		var result = confirm("Are you sure to delete this item?");
+		if (result) {
+			$(this).parent().remove();
+		}
+	})
 });
 
-  setInterval( function() {
-
-	$('.close').click(function(){
-    $(this).parent().remove();
-})
-  }, 50);
+  setInterval( function() {  }, 50);
 
   setInterval(function(){
     if (localStorage.getItem("reload") === null) {}
