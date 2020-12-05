@@ -182,7 +182,12 @@ html {
 	right:100%;
 }
 
-.close{}
+.close{
+    position: relative;
+    right: -650px;
+    top: -108px;
+    float: none !important;
+}
 
 .top{
 	z-index: 999;
