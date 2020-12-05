@@ -327,7 +327,7 @@ h {
 
 .positiveButton {
     background: #76B3FA;
-    border-radius: 100px;
+    border-radius: 15px;
     color: #fff;
     text-decoration: none;
     border: none;
@@ -336,7 +336,7 @@ h {
 
 .negativeButton {
 background: #1f436d;
-border-radius: 100px;
+border-radius: 15px;
 color: #fff;
 text-decoration: none;
 border: none;
