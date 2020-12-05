@@ -218,7 +218,7 @@ $(document).ready( function() {
 	  $(".signOutWindow").css("display", "block");
       var reload = JSON.parse(localStorage.getItem("reload"));
       //var greeting_exsit = JSON.parse(localStorage.getItem("greeting_exsit"));
-        if (reload && (document.getElementByTagName("h") === null)) {
+        if (reload && (document.getElementsByTagName("h") === null)) {
           email = localStorage.getItem("email");
           var name = localStorage.getItem("User_name");
           var greeting = "<h>Welcome " + name + "!</h>";
@@ -325,10 +325,7 @@ $(document).ready( function() {
 	  $(".signOutWindow").css("display", "block");
       var reload = JSON.parse(localStorage.getItem("reload"));
       //var greeting_exsit = JSON.parse(localStorage.getItem("greeting_exsit"));
-      if(document.getElementById("yourid") !== null)
-{
-}
-        if (reload && (document.getElementByTagName("h") === null)) {
+        if (reload && (document.getElementsByTagName("h") === null)) {
           email = localStorage.getItem("email");
           var name = localStorage.getItem("User_name");
           var greeting = "<h>Hi " + name + "!</h>";
