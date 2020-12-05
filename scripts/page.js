@@ -1,4 +1,4 @@
-const maximumDescriptionLength = 90;
+const maximumDescriptionLength = 140;
 
 var email = "Anonynous email address"
 
