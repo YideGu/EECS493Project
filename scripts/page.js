@@ -267,6 +267,7 @@ function createItemDivString1(itemIndex, imageString, header, p1, p2, p3){
 	// $("#myTemplate").tmpl(newData).appendTo("#flexbox");
 	$("#flexbox").prepend($("#myTemplate").tmpl(newData));
 	myData.unshift(newData);
+	myPostedData.unshift(newData);
 
 	$(document).on('click','.imgContainer',function() {
 		if ($("#addWindow").css("display") == "none") {
