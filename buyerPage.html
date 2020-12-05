@@ -1,17 +1,28 @@
 <!DOCTYPE html>
 <html>
-	<script src='scripts/jquery.min.js'></script>
-	<title>Item Page</title>
-	<h1 id='item-name'>Item Name</h1>
-	<img id='item-img'>
-	<p id='item-price'>text</p>
-	<p id='item-description'>text</p>
-	<p id='delivery-option'>text</p>
-	<!-- <p id='seller-information'>text</p> -->
-	<p> Contact seller: <a id='seller-information' href = "https://mail.google.com/mail/u/0/?view=cm&fs=1&tf=1&to=">${seller}</a></p>
-	<form action="index.html">
-		<input type="submit" value="Back to Main Page">
-	</form>
+	<head>
+		<script src='scripts/jquery.min.js'></script>
+		<link rel='stylesheet' href='css/buyerPage.css'>
+		<title>Item Page</title>
+	</head>
+	
+	<div id='item'>
+		<h1 id='item-name'>Item Name</h1>
+		<div id='img-box'>
+			<span class="helper"></span>
+			<img id='item-img'>
+		</div>
+		<div id='text-info'>
+			<p id='item-description'>text</p>
+			<p id='delivery-option'>text</p>
+			<hr>
+			<p>Price: <b id='item-price'></b></p>
+			<p> Contact seller: <a id='seller-information' href = "https://mail.google.com/mail/u/0/?view=cm&fs=1&tf=1&to=">${seller}</a></p>
+			<form action="index.html">
+				<input id="back-button" type="submit" value="Back to Main Page">
+			</form>
+		</div>
+	</div>
 	
 	<script src='scripts/buyerPage.js'></script>
 </html>

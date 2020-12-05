@@ -381,3 +381,12 @@ border: none;
     /* border-bottom: 0.3rem solid transparent; */
     transition: all 0.3s;
 }
+
+#SearchButton {
+	border-radius: 2px;
+	border: solid 2px #BBBBBB;
+}
+
+button:hover {
+	background-color: lightgray;
+}
