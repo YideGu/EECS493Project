@@ -208,7 +208,8 @@ $(document).ready( function() {
   setInterval(function(){
     if (localStorage.getItem("reload") === null) {}
     else {
-      $(".signinWindow").css("display", "none");
+	  $(".signinWindow").css("display", "none");
+	  $("#signInBtn2").css("display", "none");
       // $(".event").css("display", "block");
       $("#addWindow").css("display", "block");
       // $(".searchBox").css("display", "block");
@@ -386,6 +387,7 @@ function signOut() {
 	// $(".searchBox").css("display", "none");
 	$(".btn-danger").css("visibility", "hidden");
 	$(".signinWindow").css("display", "block");
+	$("#signInBtn2").css("display", "block");
 	$("h").remove();
   localStorage.removeItem("greeting_exsit");
   localStorage.removeItem("reload");
