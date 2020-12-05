@@ -16,6 +16,17 @@
       vertical-align: middle;
 }
 
+.clock{
+	position: relative;
+	top:0%;
+	left:5%;
+
+}
+
+#demo{
+	font-size:20px;
+}
+
 #inputWindow{
 	/* position: fixed; */
 	display: flex;

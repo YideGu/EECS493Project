@@ -38,7 +38,15 @@ $(document).ready( function() {
 	removeNumber.hide();
 	PublishButton.hide();
 	CancelButton.hide();
-
+	
+	var clock = setInterval(function(){
+		var date = new Date();
+		var offset = date.getTimezoneOffset();
+		$("#demo1").text("Eastern Time: " + date.toLocaleTimeString());
+	}, 16);
+	
+	
+	
 	$("#sortRadio1").click(function (){
 		$("#flexbox").empty();
 		$("#myTemplate").tmpl(myData).appendTo("#flexbox");
