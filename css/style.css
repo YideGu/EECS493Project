@@ -212,6 +212,7 @@ html {
 .searchBox {
     display: flex;
     justify-content: center;
+    width: auto;
   }
 
 .priceClass {
@@ -389,4 +390,8 @@ border: none;
 
 button:hover {
 	background-color: lightgray;
+}
+
+#content {
+    width: 100%;
 }
