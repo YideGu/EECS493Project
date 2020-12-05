@@ -35,7 +35,24 @@ $(document).ready( function() {
 	PublishButton.hide();
 	CancelButton.hide();
 
+	$("#sortRadio1").click(function (){
+		$("#flexbox").empty();
+		$("#myTemplate").tmpl(myData).appendTo("#flexbox");
+		$('.descriptionClass').each(function(){
+			// console("runned");
+			this.innerText = truncateText(this, maximumDescriptionLength);
+		})
+	})
 
+	$("#sortRadio2").click(function (){
+		$("#flexbox").empty();
+		$("#myTemplate").tmpl(myData.reverse()).appendTo("#flexbox");
+		$('.descriptionClass').each(function(){
+			// console("runned");
+			this.innerText = truncateText(this, maximumDescriptionLength);
+		})
+		myData.reverse();
+	})
 
 	// Use the template
 	$("#myTemplate").tmpl(myData).appendTo("#flexbox");
@@ -138,21 +155,26 @@ $(document).ready( function() {
 	});
 
 	PublishButton.click(function(){
-		PublishButton.hide();
-		CancelButton.hide();
-		DeleteButton.hide();
-		imagestring.hide();
-		addButton.show();
-		removeButton.show()
+		if($.isNumeric(price.val())){
+			PublishButton.hide();
+			CancelButton.hide();
+			DeleteButton.hide();
+			imagestring.hide();
+			addButton.show();
+			removeButton.show()
 
-		title.hide();
-		price.hide();
-		description.hide();
-		delivery.hide();
-		contactInformation.hide();
-		var result = createItemDivString(itemIndex, $("#imageString").val(),title.val(),price.val(),description.val(),delivery.val());
-		operationZone.append(result);
-		$("#item-"+itemIndex).append(createItemDivString1(itemIndex++, $("#imageString").val(),title.val(),price.val(),description.val(),delivery.val()));
+			title.hide();
+			price.hide();
+			description.hide();
+			delivery.hide();
+			contactInformation.hide();
+			var result = createItemDivString(itemIndex, $("#imageString").val(),title.val(),price.val(),description.val(),delivery.val());
+			operationZone.append(result);
+			$("#item-"+itemIndex).append(createItemDivString1(itemIndex++, $("#imageString").val(),title.val(),price.val(),description.val(),delivery.val()));
+		}
+		else{
+			alert("You must enter a numeric value other than 0 for price");
+		}
 	});
 
 	$('#rm').click(function(){
@@ -222,6 +244,8 @@ function createItemDivString1(itemIndex, imageString, header, p1, p2, p3){
 		}]
 	// $("#myTemplate").tmpl(newData).appendTo("#flexbox");
 	$("#flexbox").prepend($("#myTemplate").tmpl(newData));
+	myData.unshift(newData);
+
 	$(document).on('click','.imgContainer',function() {
 		if ($("#addWindow").css("display") == "none") {
 			alert("Please sign in to see more information!");
