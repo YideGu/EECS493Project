@@ -338,7 +338,7 @@ function createItemDivString1(itemIndex, imageString, header, p1, p2, p3){
 	myPostedData.unshift(newData[0]);
 
 	localStorage.setItem('myData', JSON.stringify(myData));
-	localStorage.setItem('myPostedData', JSON.stringify(myPostedData));
+	localStorage.setItem('myPostedData', JSON.stringify(myPostedData));	
 
 	$(document).on('click','.imgContainer',function() {
 		if ($("#addWindow").css("display") == "none") {
