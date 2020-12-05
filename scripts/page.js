@@ -212,7 +212,8 @@ $(document).ready( function() {
       // $(".event").css("display", "block");
       $("#addWindow").css("display", "block");
       // $(".searchBox").css("display", "block");
-      $(".btn-danger").css("visibility", "visible");
+	  $(".btn-danger").css("visibility", "visible");
+	  $(".signOutWindow").css("display", "block");
       var reload = JSON.parse(localStorage.getItem("reload"));
       var greeting_exsit = JSON.parse(localStorage.getItem("greeting_exsit"));
         if (reload && !greeting_exsit) {
@@ -319,7 +320,8 @@ $(document).ready( function() {
       // $(".event").css("display", "block");
       $("#addWindow").css("display", "block");
       // $(".searchBox").css("display", "block");
-      $(".btn-danger").css("visibility", "visible");
+	  $(".btn-danger").css("visibility", "visible");
+	  $(".signOutWindow").css("display", "block");
       var reload = JSON.parse(localStorage.getItem("reload"));
       var greeting_exsit = JSON.parse(localStorage.getItem("greeting_exsit"));
         if (reload && !greeting_exsit) {
@@ -500,6 +502,7 @@ function signOut() {
 	$("#addWindow").css("display", "none");
 	// $(".searchBox").css("display", "none");
 	$(".btn-danger").css("visibility", "hidden");
+	$(".signOutWindow").css("display", "none");
 	$(".signinWindow").css("display", "block");
 	// $("#signInBtn2").css("display", "block");
 	$("h").remove();
