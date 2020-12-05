@@ -242,6 +242,21 @@ $(document).ready( function() {
 			// console("runned");
 			this.innerText = truncateText(this, maximumDescriptionLength);
 		})
+		$(".imgContainer").each(function(){
+			$("#buttonTemplate").tmpl().appendTo(this);
+		})
+
+
+		$(document).on('click','.close',function() {
+			var result = confirm("Are you sure to delete this item?");
+			if (result) {
+				$(this).parent().remove();
+				myPostedData.shift();
+				myData.shift();
+				localStorage.setItem('myData', JSON.stringify(myData));
+				localStorage.setItem('myPostedData', JSON.stringify(myPostedData));
+			}
+		})
 	})
 
 	$("#homePageButton").click(function(){
@@ -286,6 +301,9 @@ $(document).ready( function() {
 				var seller_information = $(this).find('.sellerClass').text();
 				localStorage.setItem('seller_information', seller_information);
 				console.log(seller_information);
+
+				localStorage.setItem('myData', JSON.stringify(myData));
+				localStorage.setItem('myPostedData', JSON.stringify(myPostedData));
 			}
 		});
 	})
