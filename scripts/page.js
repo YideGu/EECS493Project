@@ -203,7 +203,7 @@ $(document).ready( function() {
     $('#Search').keydown(function(event){
           if(event.which == 13) filterItems();
 	})
-	
+
 
 	if (localStorage.getItem("reload") === null) {}
     else {
@@ -215,16 +215,16 @@ $(document).ready( function() {
 	  $(".btn-danger").css("visibility", "visible");
 	  $(".signOutWindow").css("display", "block");
       var reload = JSON.parse(localStorage.getItem("reload"));
-      var greeting_exsit = JSON.parse(localStorage.getItem("greeting_exsit"));
-        if (reload && !greeting_exsit) {
+      //var greeting_exsit = JSON.parse(localStorage.getItem("greeting_exsit"));
+        if (reload && (document.getElementByTagName("h") === null)) {
           email = localStorage.getItem("email");
           var name = localStorage.getItem("User_name");
           var greeting = "<h>Welcome " + name + "!</h>";
           $(".greeting-msg").append(greeting);
-          localStorage.setItem("greeting_exsit", JSON.stringify(true));
+          //localStorage.setItem("greeting_exsit", JSON.stringify(true));
         }
 	}
-	
+
 	$('.close').click(function(){
 		var result = confirm("Are you sure to delete this item?");
 		if (result) {
@@ -275,30 +275,30 @@ $(document).ready( function() {
 			if ($("#addWindow").css("display") == "none") {
 				alert("Please sign in to see more information!");
 			}
-	
+
 			else {
 				// redirect to the buyer page
 				window.location.href='buyerPage.html';
-	
+
 				// store the item info in local storage
 				var img_src = $(this).find('img').attr('src');
 				localStorage.setItem('img_src', img_src);
-	
+
 				var item_name = $(this).find('h1').text();
 				localStorage.setItem('item_name', item_name);
-	
+
 				var item_price = $(this).find('.priceClass').eq(0).text();
 				localStorage.setItem('item_price', item_price);
 				console.log(item_price);
-	
+
 				var item_description = $(this).find('.longDescription').text();
 				localStorage.setItem('item_description', item_description);
 				console.log(item_description);
-	
+
 				var delivery_option = $(this).find('.deliveryClass').text();
 				localStorage.setItem('delivery_option', delivery_option);
 				console.log(delivery_option);
-	
+
 				var seller_information = $(this).find('.sellerClass').text();
 				localStorage.setItem('seller_information', seller_information);
 				console.log(seller_information);
@@ -323,17 +323,20 @@ $(document).ready( function() {
 	  $(".btn-danger").css("visibility", "visible");
 	  $(".signOutWindow").css("display", "block");
       var reload = JSON.parse(localStorage.getItem("reload"));
-      var greeting_exsit = JSON.parse(localStorage.getItem("greeting_exsit"));
-        if (reload && !greeting_exsit) {
+      //var greeting_exsit = JSON.parse(localStorage.getItem("greeting_exsit"));
+      if(document.getElementById("yourid") !== null)
+{
+}
+        if (reload && (document.getElementByTagName("h") === null)) {
           email = localStorage.getItem("email");
           var name = localStorage.getItem("User_name");
-          var greeting = "<h>Welcome " + name + "!</h>";
+          var greeting = "<h>Hi " + name + "!</h>";
           $(".greeting-msg").append(greeting);
-          localStorage.setItem("greeting_exsit", JSON.stringify(true));
+          // localStorage.setItem("greeting_exsit", JSON.stringify(true));
         }
     }
   }, 1000);
-  
+
 
 function createItemDivString(itemIndex, imageString, header, p1, p2, p3){
   imageString = imageString.split("\\").pop();
@@ -358,7 +361,7 @@ function createItemDivString1(itemIndex, imageString, header, p1, p2, p3){
 	myPostedData.unshift(newData[0]);
 
 	localStorage.setItem('myData', JSON.stringify(myData));
-	localStorage.setItem('myPostedData', JSON.stringify(myPostedData));	
+	localStorage.setItem('myPostedData', JSON.stringify(myPostedData));
 
 	$(document).on('click','.imgContainer',function() {
 		if ($("#addWindow").css("display") == "none") {
@@ -435,7 +438,7 @@ function filterItems() {
 			}
 		  }
 	}
-    
+
 }
 
 function truncateText(item, maxLength) {
@@ -506,6 +509,6 @@ function signOut() {
 	$(".signinWindow").css("display", "block");
 	// $("#signInBtn2").css("display", "block");
 	$("h").remove();
-  localStorage.removeItem("greeting_exsit");
+  //localStorage.removeItem("greeting_exsit");
   localStorage.removeItem("reload");
 }
