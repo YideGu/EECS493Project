@@ -210,7 +210,7 @@ function createItemDivString(itemIndex, imageString, header, p1, p2, p3){
 }
 
 function createItemDivString1(itemIndex, imageString, header, p1, p2, p3){
-
+	if($("#contactInformation").val() != "") email = $("#contactInformation").val();
 	imageString = imageString.split("\\").pop();
 	var newData = [
 		{
@@ -220,7 +220,8 @@ function createItemDivString1(itemIndex, imageString, header, p1, p2, p3){
 			delivery: p3,
 			seller: email
 		}]
-	$("#myTemplate").tmpl(newData).appendTo("#flexbox");
+	// $("#myTemplate").tmpl(newData).appendTo("#flexbox");
+	$("#flexbox").prepend($("#myTemplate").tmpl(newData));
 	$(document).on('click','.imgContainer',function() {
 		if ($("#addWindow").css("display") == "none") {
 			alert("Please sign in to see more information!");
