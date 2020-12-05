@@ -517,7 +517,7 @@ function signOut() {
 	$("#name-info").remove();
   //localStorage.removeItem("greeting_exsit");
   localStorage.removeItem("reload");
-  window.location.href='buyerPage.html';
+  window.location.href='index.html';
 
 }
 
