@@ -337,6 +337,9 @@ function createItemDivString1(itemIndex, imageString, header, p1, p2, p3){
 	myData.unshift(newData[0]);
 	myPostedData.unshift(newData[0]);
 
+	localStorage.setItem('myData', JSON.stringify(myData));
+	localStorage.setItem('myPostedData', JSON.stringify(myPostedData));
+
 	$(document).on('click','.imgContainer',function() {
 		if ($("#addWindow").css("display") == "none") {
 			alert("Please sign in to see more information!");
