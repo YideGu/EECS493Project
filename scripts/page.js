@@ -1,7 +1,7 @@
 const maximumDescriptionLength = 140;
 
-var email = "Anonynous email address"
-
+var email = "Anonynous email address";
+var myPostedData = [];
 
 
 $(document).ready( function() {
@@ -35,7 +35,24 @@ $(document).ready( function() {
 	PublishButton.hide();
 	CancelButton.hide();
 
+	$("#sortRadio1").click(function (){
+		$("#flexbox").empty();
+		$("#myTemplate").tmpl(myData).appendTo("#flexbox");
+		$('.descriptionClass').each(function(){
+			// console("runned");
+			this.innerText = truncateText(this, maximumDescriptionLength);
+		})
+	})
 
+	$("#sortRadio2").click(function (){
+		$("#flexbox").empty();
+		$("#myTemplate").tmpl(myData.reverse()).appendTo("#flexbox");
+		$('.descriptionClass').each(function(){
+			// console("runned");
+			this.innerText = truncateText(this, maximumDescriptionLength);
+		})
+		myData.reverse();
+	})
 
 	// Use the template
 	$("#myTemplate").tmpl(myData).appendTo("#flexbox");
@@ -138,21 +155,26 @@ $(document).ready( function() {
 	});
 
 	PublishButton.click(function(){
-		PublishButton.hide();
-		CancelButton.hide();
-		DeleteButton.hide();
-		imagestring.hide();
-		addButton.show();
-		removeButton.show()
+		if($.isNumeric(price.val())){
+			PublishButton.hide();
+			CancelButton.hide();
+			DeleteButton.hide();
+			imagestring.hide();
+			addButton.show();
+			removeButton.show()
 
-		title.hide();
-		price.hide();
-		description.hide();
-		delivery.hide();
-		contactInformation.hide();
-		var result = createItemDivString(itemIndex, $("#imageString").val(),title.val(),price.val(),description.val(),delivery.val());
-		operationZone.append(result);
-		$("#item-"+itemIndex).append(createItemDivString1(itemIndex++, $("#imageString").val(),title.val(),price.val(),description.val(),delivery.val()));
+			title.hide();
+			price.hide();
+			description.hide();
+			delivery.hide();
+			contactInformation.hide();
+			var result = createItemDivString(itemIndex, $("#imageString").val(),title.val(),price.val(),description.val(),delivery.val());
+			operationZone.append(result);
+			$("#item-"+itemIndex).append(createItemDivString1(itemIndex++, $("#imageString").val(),title.val(),price.val(),description.val(),delivery.val()));
+		}
+		else{
+			alert("You must enter a numeric value other than 0 for price");
+		}
 	});
 
 	$('#rm').click(function(){
@@ -173,20 +195,102 @@ $(document).ready( function() {
 
     $('#Search').keydown(function(event){
           if(event.which == 13) filterItems();
-    })
+	})
+	
+
+	if (localStorage.getItem("reload") === null) {}
+    else {
+	  $(".signinWindow").css("display", "none");
+	//   $("#signInBtn2").css("display", "none");
+      // $(".event").css("display", "block");
+      $("#addWindow").css("display", "block");
+      // $(".searchBox").css("display", "block");
+      $(".btn-danger").css("visibility", "visible");
+      var reload = JSON.parse(localStorage.getItem("reload"));
+      var greeting_exsit = JSON.parse(localStorage.getItem("greeting_exsit"));
+        if (reload && !greeting_exsit) {
+          email = localStorage.getItem("email");
+          var name = localStorage.getItem("User_name");
+          var greeting = "<h>Welcome " + name + "!</h>";
+          $(".greeting-msg").append(greeting);
+          localStorage.setItem("greeting_exsit", JSON.stringify(true));
+        }
+	}
+	
+	$('.close').click(function(){
+		var result = confirm("Are you sure to delete this item?");
+		if (result) {
+			$(this).parent().remove();
+		}
+	})
+
+
+	$("#myPageButton").click(function(){
+		$("#itemText").text("My items");
+		$("#myPageSection").css("display", "none");
+		$("#homePageSection").css("display", "block");
+		$("#flexbox").empty();
+		$("#myTemplate").tmpl(myPostedData).appendTo("#flexbox");
+		$('.descriptionClass').each(function(){
+			// console("runned");
+			this.innerText = truncateText(this, maximumDescriptionLength);
+		})
+	})
+
+	$("#homePageButton").click(function(){
+		$("#itemText").text("On sale items");
+		$("#homePageSection").css("display", "none");
+		$("#myPageSection").css("display", "block");
+		$("#flexbox").empty();
+		$("#myTemplate").tmpl(myData).appendTo("#flexbox");
+		$('.descriptionClass').each(function(){
+			// console("runned");
+			this.innerText = truncateText(this, maximumDescriptionLength);
+		})
+
+		$(document).on('click','.imgContainer',function() {
+			if ($("#addWindow").css("display") == "none") {
+				alert("Please sign in to see more information!");
+			}
+	
+			else {
+				// redirect to the buyer page
+				window.location.href='buyerPage.html';
+	
+				// store the item info in local storage
+				var img_src = $(this).find('img').attr('src');
+				localStorage.setItem('img_src', img_src);
+	
+				var item_name = $(this).find('h1').text();
+				localStorage.setItem('item_name', item_name);
+	
+				var item_price = $(this).find('.priceClass').eq(0).text();
+				localStorage.setItem('item_price', item_price);
+				console.log(item_price);
+	
+				var item_description = $(this).find('.longDescription').text();
+				localStorage.setItem('item_description', item_description);
+				console.log(item_description);
+	
+				var delivery_option = $(this).find('.deliveryClass').text();
+				localStorage.setItem('delivery_option', delivery_option);
+				console.log(delivery_option);
+	
+				var seller_information = $(this).find('.sellerClass').text();
+				localStorage.setItem('seller_information', seller_information);
+				console.log(seller_information);
+			}
+		});
+	})
 });
 
-  setInterval( function() {
-
-	$('.close').click(function(){
-    $(this).parent().remove();
-})
-  }, 50);
+  setInterval( function() {  }, 50);
 
   setInterval(function(){
     if (localStorage.getItem("reload") === null) {}
     else {
-      $(".signinWindow").css("display", "none");
+	  $(".signinWindow").css("display", "none");
+	//   $("#signInBtn2").css("display", "none");
       // $(".event").css("display", "block");
       $("#addWindow").css("display", "block");
       // $(".searchBox").css("display", "block");
@@ -202,6 +306,7 @@ $(document).ready( function() {
         }
     }
   }, 1000);
+  
 
 function createItemDivString(itemIndex, imageString, header, p1, p2, p3){
   imageString = imageString.split("\\").pop();
@@ -222,6 +327,9 @@ function createItemDivString1(itemIndex, imageString, header, p1, p2, p3){
 		}]
 	// $("#myTemplate").tmpl(newData).appendTo("#flexbox");
 	$("#flexbox").prepend($("#myTemplate").tmpl(newData));
+	myData.unshift(newData);
+	myPostedData.unshift(newData);
+
 	$(document).on('click','.imgContainer',function() {
 		if ($("#addWindow").css("display") == "none") {
 			alert("Please sign in to see more information!");
@@ -362,6 +470,7 @@ function signOut() {
 	// $(".searchBox").css("display", "none");
 	$(".btn-danger").css("visibility", "hidden");
 	$(".signinWindow").css("display", "block");
+	// $("#signInBtn2").css("display", "block");
 	$("h").remove();
   localStorage.removeItem("greeting_exsit");
   localStorage.removeItem("reload");
