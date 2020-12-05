@@ -412,3 +412,14 @@ button:hover {
 #content {
     width: 100%;
 }
+.article-header {
+  background-color: #7386D5;
+  height: 150px;
+}
+.article-title, .article-desc {
+  margin-left: 250px;
+  margin-right: 250px;
+}
+.article-title {
+  padding-top: 10px;
+}
