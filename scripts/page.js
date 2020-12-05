@@ -38,15 +38,15 @@ $(document).ready( function() {
 	removeNumber.hide();
 	PublishButton.hide();
 	CancelButton.hide();
-	
+
 	var clock = setInterval(function(){
 		var date = new Date();
 		var offset = date.getTimezoneOffset();
 		$("#demo1").text("Eastern Time: " + date.toLocaleTimeString());
 	}, 16);
-	
-	
-	
+
+
+
 	$("#sortRadio1").click(function (){
 		$("#flexbox").empty();
 		$("#myTemplate").tmpl(myData).appendTo("#flexbox");
@@ -215,25 +215,25 @@ $(document).ready( function() {
 	})
 
 
-	if (localStorage.getItem("reload") === null) {}
-    else {
-	  $(".signinWindow").css("display", "none");
-	//   $("#signInBtn2").css("display", "none");
-      // $(".event").css("display", "block");
-      $("#addWindow").css("display", "block");
-      // $(".searchBox").css("display", "block");
-	  $(".btn-danger").css("visibility", "visible");
-	  $(".signOutWindow").css("display", "block");
-      var reload = JSON.parse(localStorage.getItem("reload"));
-      //var greeting_exsit = JSON.parse(localStorage.getItem("greeting_exsit"));
-        if (reload && (document.getElementById("name-info") === null)) {
-          email = localStorage.getItem("email");
-          var name = localStorage.getItem("User_name");
-          var greeting = "<h id='name-info'>Hi " + name + "!</h>";
-          $(".greeting-msg").append(greeting);
-          //localStorage.setItem("greeting_exsit", JSON.stringify(true));
-        }
-	}
+	// if (localStorage.getItem("reload") === null) {}
+  //   else {
+	//   $(".signinWindow").css("display", "none");
+	// //   $("#signInBtn2").css("display", "none");
+  //     // $(".event").css("display", "block");
+  //     $("#addWindow").css("display", "block");
+  //     // $(".searchBox").css("display", "block");
+	//   $(".btn-danger").css("visibility", "visible");
+	//   $(".signOutWindow").css("display", "block");
+  //     var reload = JSON.parse(localStorage.getItem("reload"));
+  //     //var greeting_exsit = JSON.parse(localStorage.getItem("greeting_exsit"));
+  //       if (reload && (document.getElementById("name-info") === null)) {
+  //         email = localStorage.getItem("email");
+  //         var name = localStorage.getItem("User_name");
+  //         var greeting = "<h id='name-info'>Hi " + name + "!</h>";
+  //         $(".greeting-msg").append(greeting);
+  //         //localStorage.setItem("greeting_exsit", JSON.stringify(true));
+  //       }
+	// }
 
 	$('.close').click(function(){
 		var result = confirm("Are you sure to delete this item?");
@@ -517,6 +517,8 @@ function signOut() {
 	$("#name-info").remove();
   //localStorage.removeItem("greeting_exsit");
   localStorage.removeItem("reload");
+  window.location.href='buyerPage.html';
+
 }
 
 
