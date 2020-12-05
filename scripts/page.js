@@ -328,7 +328,7 @@ $(document).ready( function() {
         if (reload && (document.getElementById("name-info") === null)) {
           email = localStorage.getItem("email");
           var name = localStorage.getItem("User_name");
-          var greeting = "<h>Hi " + name + "!</h>";
+          var greeting = "<h id='name-info'>Hi " + name + "!</h>";
           $(".greeting-msg").append(greeting);
           // localStorage.setItem("greeting_exsit", JSON.stringify(true));
         }
