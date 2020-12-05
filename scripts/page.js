@@ -310,7 +310,6 @@ $(document).ready( function() {
 	})
 });
 
-  setInterval( function() {  }, 50);
 
   setInterval(function(){
     if (localStorage.getItem("reload") === null) {}
