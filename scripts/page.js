@@ -218,10 +218,10 @@ $(document).ready( function() {
 	  $(".signOutWindow").css("display", "block");
       var reload = JSON.parse(localStorage.getItem("reload"));
       //var greeting_exsit = JSON.parse(localStorage.getItem("greeting_exsit"));
-        if (reload && (document.getElementsByTagName("h") === null)) {
+        if (reload && (document.getElementById("name-info") === null)) {
           email = localStorage.getItem("email");
           var name = localStorage.getItem("User_name");
-          var greeting = "<h>Welcome " + name + "!</h>";
+          var greeting = "<h id='name-info'>Hi " + name + "!</h>";
           $(".greeting-msg").append(greeting);
           //localStorage.setItem("greeting_exsit", JSON.stringify(true));
         }
@@ -325,7 +325,7 @@ $(document).ready( function() {
 	  $(".signOutWindow").css("display", "block");
       var reload = JSON.parse(localStorage.getItem("reload"));
       //var greeting_exsit = JSON.parse(localStorage.getItem("greeting_exsit"));
-        if (reload && (document.getElementsByTagName("h") === null)) {
+        if (reload && (document.getElementById("name-info") === null)) {
           email = localStorage.getItem("email");
           var name = localStorage.getItem("User_name");
           var greeting = "<h>Hi " + name + "!</h>";
@@ -506,7 +506,7 @@ function signOut() {
 	$(".signOutWindow").css("display", "none");
 	$(".signinWindow").css("display", "block");
 	// $("#signInBtn2").css("display", "block");
-	$("h").remove();
+	$("#name-info").remove();
   //localStorage.removeItem("greeting_exsit");
   localStorage.removeItem("reload");
 }
