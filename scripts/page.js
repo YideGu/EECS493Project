@@ -172,7 +172,15 @@ $(document).ready( function() {
 	});
 
 	PublishButton.click(function(){
-		if($.isNumeric(price.val())){
+		if(title.val() == ""){
+			alert("You must not leave title blank.");
+		}
+		else if(!$.isNumeric(price.val())){
+			alert("You must enter a numeric value other than 0 for price");
+		}
+		else
+		{
+			
 			PublishButton.hide();
 			CancelButton.hide();
 			DeleteButton.hide();
@@ -188,9 +196,6 @@ $(document).ready( function() {
 			var result = createItemDivString(itemIndex, $("#imageString").val(),title.val(),price.val(),description.val(),delivery.val());
 			operationZone.append(result);
 			$("#item-"+itemIndex).append(createItemDivString1(itemIndex++, $("#imageString").val(),title.val(),price.val(),description.val(),delivery.val()));
-		}
-		else{
-			alert("You must enter a numeric value other than 0 for price");
 		}
 	});
 
