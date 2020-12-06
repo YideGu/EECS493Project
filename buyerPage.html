@@ -16,7 +16,38 @@
 	
 	<title>Item Page</title>
 	
-	<div id='header'></div>
+        <header>
+            <div class="collapse bg-dark" id="navbarHeader" style="z-index: 5;">
+              <div class="container">
+                <div class="row">
+                  <div class="col-sm-8 col-md-7 py-4">
+                    <h4 class="text-white">About</h4>
+                    <p class="text-muted"> This is a second-hand item transaction platform targeted for students in University of Michigan. Students may browse items they are interested in or make a post about what they want to sell. This is an EECS493 project focus on frontend techniques. No backend is implemented and no features required backend is effective. </p>
+                  </div>
+                  <div class="col-sm-4 offset-md-1 py-4">
+                    <h4 class="text-white">Contact</h4>
+                    <ul class="list-unstyled">
+                      <li><a href="#" class="text-white">EECS493 Group 82</a></li>
+                      <li><a href="#" class="text-white">Like on Facebook</a></li>
+                      <li><a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=guyide@umich.edu" class="text-white">Email me</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="navbar navbar-dark bg-dark box-shadow" style="z-index: 5;">
+                <div class="container d-flex justify-content-between">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <a href="#" class="navbar-brand d-flex align-items-center">
+                        <img src="images\transaction.png" width="30" height="25" style="margin-right: 5px;">
+                        <strong>Second-hand Transaction Platform</strong>
+                    </a>
+                    <div class="greeting-msg"></div>
+              </div>
+            </div>
+        </header>
 	
 	<div id='item'>
 		<h1 id='item-name'>Item Name</h1>
