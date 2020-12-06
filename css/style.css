@@ -237,17 +237,8 @@ html {
     font-weight: bold;
 }
 
-/* .event {
-  display: none;
-}
 
-#addWindow{
-  display: none;
-}
 
-.searchBox{
-  display: none;
-} */
 
 .btn-danger{
   position: absolute;
@@ -422,4 +413,14 @@ button:hover {
 }
 .article-title {
   padding-top: 10px;
+}
+
+
+#addWindow{
+    display: none;
+}
+
+#signOutWindow{
+    display: none;
+}
 }
