@@ -415,12 +415,11 @@ button:hover {
   padding-top: 10px;
 }
 
-
 #addWindow{
     display: none;
 }
 
-#signOutWindow{
+.signOutWindow{
     display: none;
 }
-}
+
