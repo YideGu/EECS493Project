@@ -327,26 +327,6 @@ $(document).ready( function() {
 
 	if (localStorage.getItem("reload") === null) {}
     else {
-<<<<<<< HEAD
-		$(".signinWindow").css("display", "none");
-		//   $("#signInBtn2").css("display", "none");
-		// $(".event").css("display", "block");
-		$("#addWindow").css("display", "block");
-		// $(".searchBox").css("display", "block");
-		$(".btn-danger").css("visibility", "visible");
-		$(".signOutWindow").css("display", "block");
-		var reload = JSON.parse(localStorage.getItem("reload"));
-		//var greeting_exsit = JSON.parse(localStorage.getItem("greeting_exsit"));
-		if(document.getElementById("yourid") !== null)
-		{
-		}
-        if (reload && (document.getElementByTagName("h") === null)) {
-			email = localStorage.getItem("email");
-			var name = localStorage.getItem("User_name");
-			var greeting = "<h>Hi " + name + "!</h>";
-			$(".greeting-msg").append(greeting);
-			// localStorage.setItem("greeting_exsit", JSON.stringify(true));
-=======
 	  $(".signinWindow").css("display", "none");
 	//   $("#signInBtn2").css("display", "none");
       // $(".event").css("display", "block");
@@ -362,7 +342,6 @@ $(document).ready( function() {
           var greeting = "<h id='name-info'>Hi " + name + "!</h>";
           $(".greeting-msg").append(greeting);
           // localStorage.setItem("greeting_exsit", JSON.stringify(true));
->>>>>>> b3eaf29ebd804a503569e2403d3ddb87ab79d0f2
         }
     }
 });
