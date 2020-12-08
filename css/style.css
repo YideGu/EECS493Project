@@ -16,6 +16,17 @@
       vertical-align: middle;
 }
 
+.clock{
+	position: relative;
+	top:0%;
+	left:5%;
+
+}
+
+#demo{
+	font-size:20px;
+}
+
 #inputWindow{
 	/* position: fixed; */
 	display: flex;
@@ -226,17 +237,8 @@ html {
     font-weight: bold;
 }
 
-/* .event {
-  display: none;
-}
 
-#addWindow{
-  display: none;
-}
 
-.searchBox{
-  display: none;
-} */
 
 .btn-danger{
   position: absolute;
@@ -401,3 +403,23 @@ button:hover {
 #content {
     width: 100%;
 }
+.article-header {
+  background-color: #7386D5;
+  height: 150px;
+}
+.article-title, .article-desc {
+  margin-left: 250px;
+  margin-right: 250px;
+}
+.article-title {
+  padding-top: 10px;
+}
+
+#addWindow{
+    display: none;
+}
+
+.signOutWindow{
+    display: none;
+}
+

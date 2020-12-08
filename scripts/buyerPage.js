@@ -18,4 +18,6 @@ $(document).ready(function() {
 	$('#delivery-option').text(delivery_option);
 	$('#seller-information').text(seller_information);
 	$("#seller-information").attr("href", "https://mail.google.com/mail/u/0/?view=cm&fs=1&tf=1&to=" + seller_information);
+	
+//	$('#header').load('index.html header');
 })

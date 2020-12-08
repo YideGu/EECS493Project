@@ -39,6 +39,14 @@ $(document).ready( function() {
 	PublishButton.hide();
 	CancelButton.hide();
 
+	var clock = setInterval(function(){
+		var date = new Date();
+		var offset = date.getTimezoneOffset();
+		$("#demo1").text("Eastern Time: " + date.toLocaleTimeString());
+	}, 16);
+
+
+
 	$("#sortRadio1").click(function (){
 		$("#flexbox").empty();
 		$("#myTemplate").tmpl(myData).appendTo("#flexbox");
@@ -164,7 +172,15 @@ $(document).ready( function() {
 	});
 
 	PublishButton.click(function(){
-		if($.isNumeric(price.val())){
+		if(title.val() == ""){
+			alert("You must not leave title blank.");
+		}
+		else if(!$.isNumeric(price.val())){
+			alert("You must enter a numeric value other than 0 for price");
+		}
+		else
+		{
+			
 			PublishButton.hide();
 			CancelButton.hide();
 			DeleteButton.hide();
@@ -180,9 +196,6 @@ $(document).ready( function() {
 			createItemDivString1(itemIndex, $("#imageString").val(),title.val(),price.val(),description.val(),delivery.val());
 			// operationZone.append(result);
 			// $("#item-"+itemIndex).append(createItemDivString1(itemIndex++, $("#imageString").val(),title.val(),price.val(),description.val(),delivery.val()));
-		}
-		else{
-			alert("You must enter a numeric value other than 0 for price");
 		}
 	});
 
@@ -207,25 +220,25 @@ $(document).ready( function() {
 	})
 
 
-	if (localStorage.getItem("reload") === null) {}
-    else {
-	  $(".signinWindow").css("display", "none");
-	//   $("#signInBtn2").css("display", "none");
-      // $(".event").css("display", "block");
-      $("#addWindow").css("display", "block");
-      // $(".searchBox").css("display", "block");
-	  $(".btn-danger").css("visibility", "visible");
-	  $(".signOutWindow").css("display", "block");
-      var reload = JSON.parse(localStorage.getItem("reload"));
-      //var greeting_exsit = JSON.parse(localStorage.getItem("greeting_exsit"));
-        if (reload && (document.getElementByTagName("h") === null)) {
-          email = localStorage.getItem("email");
-          var name = localStorage.getItem("User_name");
-          var greeting = "<h>Welcome " + name + "!</h>";
-          $(".greeting-msg").append(greeting);
-          //localStorage.setItem("greeting_exsit", JSON.stringify(true));
-        }
-	}
+	// if (localStorage.getItem("reload") === null) {}
+  //   else {
+	//   $(".signinWindow").css("display", "none");
+	// //   $("#signInBtn2").css("display", "none");
+  //     // $(".event").css("display", "block");
+  //     $("#addWindow").css("display", "block");
+  //     // $(".searchBox").css("display", "block");
+	//   $(".btn-danger").css("visibility", "visible");
+	//   $(".signOutWindow").css("display", "block");
+  //     var reload = JSON.parse(localStorage.getItem("reload"));
+  //     //var greeting_exsit = JSON.parse(localStorage.getItem("greeting_exsit"));
+  //       if (reload && (document.getElementById("name-info") === null)) {
+  //         email = localStorage.getItem("email");
+  //         var name = localStorage.getItem("User_name");
+  //         var greeting = "<h id='name-info'>Hi " + name + "!</h>";
+  //         $(".greeting-msg").append(greeting);
+  //         //localStorage.setItem("greeting_exsit", JSON.stringify(true));
+  //       }
+	// }
 
 	$('.close').click(function(){
 		var result = confirm("Are you sure to delete this item?");
@@ -314,6 +327,7 @@ $(document).ready( function() {
 
 	if (localStorage.getItem("reload") === null) {}
     else {
+<<<<<<< HEAD
 		$(".signinWindow").css("display", "none");
 		//   $("#signInBtn2").css("display", "none");
 		// $(".event").css("display", "block");
@@ -332,6 +346,23 @@ $(document).ready( function() {
 			var greeting = "<h>Hi " + name + "!</h>";
 			$(".greeting-msg").append(greeting);
 			// localStorage.setItem("greeting_exsit", JSON.stringify(true));
+=======
+	  $(".signinWindow").css("display", "none");
+	//   $("#signInBtn2").css("display", "none");
+      // $(".event").css("display", "block");
+      $("#addWindow").css("display", "block");
+      // $(".searchBox").css("display", "block");
+	  $(".btn-danger").css("visibility", "visible");
+	  $(".signOutWindow").css("display", "block");
+      var reload = JSON.parse(localStorage.getItem("reload"));
+      //var greeting_exsit = JSON.parse(localStorage.getItem("greeting_exsit"));
+        if (reload && (document.getElementById("name-info") === null)) {
+          email = localStorage.getItem("email");
+          var name = localStorage.getItem("User_name");
+          var greeting = "<h id='name-info'>Hi " + name + "!</h>";
+          $(".greeting-msg").append(greeting);
+          // localStorage.setItem("greeting_exsit", JSON.stringify(true));
+>>>>>>> b3eaf29ebd804a503569e2403d3ddb87ab79d0f2
         }
     }
 });
@@ -512,9 +543,11 @@ function signOut() {
 	$(".signOutWindow").css("display", "none");
 	$(".signinWindow").css("display", "block");
 	// $("#signInBtn2").css("display", "block");
-	$("h").remove();
+	$("#name-info").remove();
   //localStorage.removeItem("greeting_exsit");
   localStorage.removeItem("reload");
+//  window.location.href='index.html';
+
 }
 
 

@@ -83,10 +83,12 @@
                             <input id = "price" class = "form__input" type="text" id="fname" name="fname" size="80" placeholder="price">
                             <input id = "description" class = "form__input" type="text" id="fname" name="fname" size="80" placeholder="description">
                             <input id = "delivery" class = "form__input" type="text" id="fname" name="fname" size="80" placeholder="delivery">
-                            <input id = "contactInformation" class = "form__input" type="text" id="fname" name="fname" size="80" placeholder="contact information">
+                            <span title="Leave blank to use your umich email address as default">
+                                <input id = "contactInformation" class = "form__input" type="text" id="fname" name="fname" size="80" placeholder="contact information">
+                            </span>
                             <!-- <input id = "image" type="text" id="fname" name="fname" size="80" placeholder="image"> -->
                             <div id = "image">
-                                <p style = "margin-bottom: 0px;"> Select an image to add.</p>
+                                <span title="The image must be put locally in 'images/' folder"><p style = "margin-bottom: 0px;"> Select an image to add.</p></span>
                                 <input id = "imageString" type="file" name="fname">
                             </div>
                         </div>
@@ -141,7 +143,9 @@
                         <p>Return to <button id = "homePageButton" class = "negativeButton" style="margin-left: 5px;" type="button">Home Page</button> to browse all items</p>
                     </div>
                 </div>  
-                
+                <div class = "clock" id="demo"> 
+					<p id="demo1"></p>
+				</div>
                 <!-- <ul class="list-unstyled components">
                     <p>Set filters for searching</p>
                     <li class="active">
@@ -183,7 +187,6 @@
                     </li>
                 </ul> -->
             </nav>
-
             <div id="content">
 
                 <div class = "searchBox">
@@ -191,7 +194,6 @@
                         <p style="display: inline; font-size: 30px; margin-right: 20px;" id = "itemText"><b>On sale items </b></p>
                         <input id = "Search" type="text" id="fname" name="fname" size="80" placeholder="Search for what you want!">
                         <button id = "SearchButton" type="button">Search!</button>
-						<div id="clock"> </div>
                     </div>
 
                 </div>
