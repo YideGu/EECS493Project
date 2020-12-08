@@ -194,6 +194,7 @@ $(document).ready( function() {
 			delivery.hide();
 			contactInformation.hide();
 			createItemDivString1(itemIndex, $("#imageString").val(),title.val(),price.val(),description.val(),delivery.val());
+			location.reload(true);
 			// operationZone.append(result);
 			// $("#item-"+itemIndex).append(createItemDivString1(itemIndex++, $("#imageString").val(),title.val(),price.val(),description.val(),delivery.val()));
 		}
@@ -276,52 +277,53 @@ $(document).ready( function() {
 	})
 
 	$("#homePageButton").click(function(){
-		$("#itemText").text("On sale items");
-		$("#homePageSection").css("display", "none");
-		$("#myPageSection").css("display", "block");
-		$("#flexbox").empty();
-		$("#myTemplate").tmpl(myData).appendTo("#flexbox");
-		$('.descriptionClass').each(function(){
-			// console("runned");
-			this.innerText = truncateText(this, maximumDescriptionLength);
-		})
+		location.reload(true);
+		// $("#itemText").text("On sale items");
+		// $("#homePageSection").css("display", "none");
+		// $("#myPageSection").css("display", "block");
+		// $("#flexbox").empty();
+		// $("#myTemplate").tmpl(myData).appendTo("#flexbox");
+		// $('.descriptionClass').each(function(){
+		// 	// console("runned");
+		// 	this.innerText = truncateText(this, maximumDescriptionLength);
+		// })
 
-		$(document).on('click','.imgContainer',function() {
-			if ($("#addWindow").css("display") == "none") {
-				alert("Please sign in to see more information!");
-			}
+		// $(document).on('click','.imgContainer',function() {
+		// 	if ($("#addWindow").css("display") == "none") {
+		// 		alert("Please sign in to see more information!");
+		// 	}
 
-			else {
-				// redirect to the buyer page
-				window.location.href='buyerPage.html';
+		// 	else {
+		// 		// redirect to the buyer page
+		// 		window.location.href='buyerPage.html';
 
-				// store the item info in local storage
-				var img_src = $(this).find('img').attr('src');
-				localStorage.setItem('img_src', img_src);
+		// 		// store the item info in local storage
+		// 		var img_src = $(this).find('img').attr('src');
+		// 		localStorage.setItem('img_src', img_src);
 
-				var item_name = $(this).find('h1').text();
-				localStorage.setItem('item_name', item_name);
+		// 		var item_name = $(this).find('h1').text();
+		// 		localStorage.setItem('item_name', item_name);
 
-				var item_price = $(this).find('.priceClass').eq(0).text();
-				localStorage.setItem('item_price', item_price);
-				console.log(item_price);
+		// 		var item_price = $(this).find('.priceClass').eq(0).text();
+		// 		localStorage.setItem('item_price', item_price);
+		// 		console.log(item_price);
 
-				var item_description = $(this).find('.longDescription').text();
-				localStorage.setItem('item_description', item_description);
-				console.log(item_description);
+		// 		var item_description = $(this).find('.longDescription').text();
+		// 		localStorage.setItem('item_description', item_description);
+		// 		console.log(item_description);
 
-				var delivery_option = $(this).find('.deliveryClass').text();
-				localStorage.setItem('delivery_option', delivery_option);
-				console.log(delivery_option);
+		// 		var delivery_option = $(this).find('.deliveryClass').text();
+		// 		localStorage.setItem('delivery_option', delivery_option);
+		// 		console.log(delivery_option);
 
-				var seller_information = $(this).find('.sellerClass').text();
-				localStorage.setItem('seller_information', seller_information);
-				console.log(seller_information);
+		// 		var seller_information = $(this).find('.sellerClass').text();
+		// 		localStorage.setItem('seller_information', seller_information);
+		// 		console.log(seller_information);
 
-				localStorage.setItem('myData', JSON.stringify(myData));
-				localStorage.setItem('myPostedData', JSON.stringify(myPostedData));
-			}
-		});
+		// 		localStorage.setItem('myData', JSON.stringify(myData));
+		// 		localStorage.setItem('myPostedData', JSON.stringify(myPostedData));
+		// 	}
+		// });
 	})
 
 
