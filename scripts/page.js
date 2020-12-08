@@ -177,9 +177,9 @@ $(document).ready( function() {
 			description.hide();
 			delivery.hide();
 			contactInformation.hide();
-			var result = createItemDivString(itemIndex, $("#imageString").val(),title.val(),price.val(),description.val(),delivery.val());
-			operationZone.append(result);
-			$("#item-"+itemIndex).append(createItemDivString1(itemIndex++, $("#imageString").val(),title.val(),price.val(),description.val(),delivery.val()));
+			createItemDivString1(itemIndex, $("#imageString").val(),title.val(),price.val(),description.val(),delivery.val());
+			// operationZone.append(result);
+			// $("#item-"+itemIndex).append(createItemDivString1(itemIndex++, $("#imageString").val(),title.val(),price.val(),description.val(),delivery.val()));
 		}
 		else{
 			alert("You must enter a numeric value other than 0 for price");
@@ -310,32 +310,35 @@ $(document).ready( function() {
 			}
 		});
 	})
+
+
+	if (localStorage.getItem("reload") === null) {}
+    else {
+		$(".signinWindow").css("display", "none");
+		//   $("#signInBtn2").css("display", "none");
+		// $(".event").css("display", "block");
+		$("#addWindow").css("display", "block");
+		// $(".searchBox").css("display", "block");
+		$(".btn-danger").css("visibility", "visible");
+		$(".signOutWindow").css("display", "block");
+		var reload = JSON.parse(localStorage.getItem("reload"));
+		//var greeting_exsit = JSON.parse(localStorage.getItem("greeting_exsit"));
+		if(document.getElementById("yourid") !== null)
+		{
+		}
+        if (reload && (document.getElementByTagName("h") === null)) {
+			email = localStorage.getItem("email");
+			var name = localStorage.getItem("User_name");
+			var greeting = "<h>Hi " + name + "!</h>";
+			$(".greeting-msg").append(greeting);
+			// localStorage.setItem("greeting_exsit", JSON.stringify(true));
+        }
+    }
 });
 
 
   setInterval(function(){
-    if (localStorage.getItem("reload") === null) {}
-    else {
-	  $(".signinWindow").css("display", "none");
-	//   $("#signInBtn2").css("display", "none");
-      // $(".event").css("display", "block");
-      $("#addWindow").css("display", "block");
-      // $(".searchBox").css("display", "block");
-	  $(".btn-danger").css("visibility", "visible");
-	  $(".signOutWindow").css("display", "block");
-      var reload = JSON.parse(localStorage.getItem("reload"));
-      //var greeting_exsit = JSON.parse(localStorage.getItem("greeting_exsit"));
-      if(document.getElementById("yourid") !== null)
-{
-}
-        if (reload && (document.getElementByTagName("h") === null)) {
-          email = localStorage.getItem("email");
-          var name = localStorage.getItem("User_name");
-          var greeting = "<h>Hi " + name + "!</h>";
-          $(".greeting-msg").append(greeting);
-          // localStorage.setItem("greeting_exsit", JSON.stringify(true));
-        }
-    }
+    
   }, 1000);
 
 
